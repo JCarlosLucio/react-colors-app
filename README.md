@@ -1,3 +1,8 @@
+# PROJECT REACT COLOR APP
+
+## Overview
+A mix/clone of [Flat UI Colors](https://flatuicolors.com/) and [Material UI Colors](http://materialuicolors.co/) made using REACT.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
