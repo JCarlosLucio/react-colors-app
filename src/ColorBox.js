@@ -1,4 +1,5 @@
 import React from 'react';
+import './ColorBox.css';
 
 function ColorBox({ background, name }) {
   return (
