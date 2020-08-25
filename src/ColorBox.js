@@ -13,6 +13,10 @@ function ColorBox({ background, name }) {
           style={{ background }}
           className={`copy-overlay ${isCopied && 'show'}`}
         />
+        <div className={`copy-msg ${isCopied && 'show'}`}>
+          <h1>COPIED!</h1>
+          <p>{background}</p>
+        </div>
         <div className="copy-container">
           <div className="box-content">
             <span>{name}</span>
