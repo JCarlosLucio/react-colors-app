@@ -20,6 +20,13 @@ function Palette({ palette }) {
           max={900}
           step={100}
           onAfterChange={(newLevel) => setLevel(newLevel)}
+          trackStyle={{ backgroundColor: 'transparent' }}
+          handleStyle={{
+            backgroundColor: 'green',
+            borderColor: 'green',
+            marginTop: -3,
+          }}
+          railStyle={{ height: 8 }}
         />
       </div>
       <div className="Palette-colors">{colorBoxes}</div>
