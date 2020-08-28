@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ColorBox from './ColorBox';
+import Navbar from './Navbar';
 import './Palette.css';
 
 function Palette({ palette }) {
