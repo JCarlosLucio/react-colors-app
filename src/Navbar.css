@@ -16,8 +16,13 @@
   height: 100%;
 }
 
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+
 .slider {
   width: 340px;
-  margin: 0;
+  margin-left: 10px;
   display: inline-block;
 }
