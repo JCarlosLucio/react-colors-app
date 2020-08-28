@@ -1,3 +1,10 @@
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 6vh;
+}
+
 .slider {
   width: 340px;
   margin: 0;
