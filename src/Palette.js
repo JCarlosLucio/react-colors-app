@@ -11,7 +11,7 @@ function Palette({ palette }) {
   ));
   return (
     <div className="Palette">
-      {/* Navbar goes here */}
+      <Navbar level={level} setLevel={setLevel} />
       <div className="Palette-colors">{colorBoxes}</div>
       {/* Footer goes here */}
     </div>

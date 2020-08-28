@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
-function Navbar() {
+function Navbar({ level, setLevel }) {
   return (
     <nav className="Navbar">
       <div className="logo">
