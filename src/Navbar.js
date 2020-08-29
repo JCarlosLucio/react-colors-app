@@ -5,7 +5,7 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import './Navbar.css';
 
-function Navbar({ level, setLevel }) {
+function Navbar({ level, setLevel, format, setFormat }) {
   return (
     <nav className="Navbar">
       <div className="logo">
@@ -31,7 +31,7 @@ function Navbar({ level, setLevel }) {
         </div>
       </div>
       <div className="select-container">
-        <Select>
+        <Select value={format} onChange={(e) => setFormat(e.target.value)}>
           <MenuItem value="hex">HEX - #ffffff</MenuItem>
           <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
           <MenuItem value="rgba">RGBA - rgba(255,255,255,1.0)</MenuItem>
