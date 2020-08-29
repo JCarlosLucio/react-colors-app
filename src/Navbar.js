@@ -29,6 +29,9 @@ function Navbar({ level, setLevel }) {
           />
         </div>
       </div>
+      <div className="select-container">
+        <Select />
+      </div>
     </nav>
   );
 }
