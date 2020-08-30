@@ -11,6 +11,10 @@ import './Navbar.css';
 function Navbar({ level, setLevel, format, setFormat }) {
   const [open, setOpen] = useState(true);
 
+  const handleFormatChange = (e) => {
+    setFormat(e.target.value);
+  };
+
   const closeSnackbar = () => {
     setOpen(false);
   };
@@ -40,7 +44,7 @@ function Navbar({ level, setLevel, format, setFormat }) {
         </div>
       </div>
       <div className="select-container">
-        <Select value={format} onChange={(e) => setFormat(e.target.value)}>
+        <Select value={format} onChange={handleFormatChange}>
           <MenuItem value="hex">HEX - #ffffff</MenuItem>
           <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
           <MenuItem value="rgba">RGBA - rgba(255,255,255,1.0)</MenuItem>
