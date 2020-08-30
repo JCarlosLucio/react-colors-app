@@ -56,7 +56,9 @@ function Navbar({ level, setLevel, format, setFormat }) {
         open={open}
         autoHideDuration={3000}
         onClose={closeSnackbar}
-        message={<span id="message-id">Format Changed!</span>}
+        message={
+          <span id="message-id">Format Changed To {format.toUpperCase()}</span>
+        }
         ContentProps={{ 'aria-describedby': 'message-id' }}
         action={
           <React.Fragment>
