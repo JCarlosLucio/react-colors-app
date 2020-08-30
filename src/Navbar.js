@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -9,6 +9,7 @@ import 'rc-slider/assets/index.css';
 import './Navbar.css';
 
 function Navbar({ level, setLevel, format, setFormat }) {
+  const [open, setOpen] = useState(true);
   return (
     <nav className="Navbar">
       <div className="logo">
