@@ -41,6 +41,21 @@ function Navbar({ level, setLevel, format, setFormat }) {
           <MenuItem value="rgba">RGBA - rgba(255,255,255,1.0)</MenuItem>
         </Select>
       </div>
+      <Snackbar
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        open={open}
+        autoHideDuration={3000}
+        // onClose={handleClose}
+        message={<span id="message-id">Format Changed!</span>}
+        ContentProps={{ 'aria-describe': 'message-id' }}
+        action={
+          <React.Fragment>
+            <IconButton>
+              <CloseIcon />
+            </IconButton>
+          </React.Fragment>
+        }
+      />
     </nav>
   );
 }
