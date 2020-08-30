@@ -10,6 +10,11 @@ import './Navbar.css';
 
 function Navbar({ level, setLevel, format, setFormat }) {
   const [open, setOpen] = useState(true);
+
+  const closeSnackbar = () => {
+    setOpen(false);
+  };
+
   return (
     <nav className="Navbar">
       <div className="logo">
@@ -45,12 +50,12 @@ function Navbar({ level, setLevel, format, setFormat }) {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         open={open}
         autoHideDuration={3000}
-        // onClose={handleClose}
+        onClose={closeSnackbar}
         message={<span id="message-id">Format Changed!</span>}
-        ContentProps={{ 'aria-describe': 'message-id' }}
+        ContentProps={{ 'aria-describedby': 'message-id' }}
         action={
           <React.Fragment>
-            <IconButton>
+            <IconButton onClick={closeSnackbar}>
               <CloseIcon />
             </IconButton>
           </React.Fragment>
