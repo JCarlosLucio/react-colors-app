@@ -55,7 +55,11 @@ function Navbar({ level, setLevel, format, setFormat }) {
         ContentProps={{ 'aria-describedby': 'message-id' }}
         action={
           <React.Fragment>
-            <IconButton onClick={closeSnackbar}>
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              onClick={closeSnackbar}
+            >
               <CloseIcon />
             </IconButton>
           </React.Fragment>
