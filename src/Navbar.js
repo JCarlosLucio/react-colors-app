@@ -9,10 +9,11 @@ import 'rc-slider/assets/index.css';
 import './Navbar.css';
 
 function Navbar({ level, setLevel, format, setFormat }) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleFormatChange = (e) => {
     setFormat(e.target.value);
+    setOpen(true);
   };
 
   const closeSnackbar = () => {
