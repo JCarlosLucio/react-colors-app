@@ -19,7 +19,10 @@ function Palette({ palette }) {
         setFormat={setFormat}
       />
       <div className="Palette-colors">{colorBoxes}</div>
-      <footer className="Palette-footer" />
+      <footer className="Palette-footer">
+        {palette.paletteName}
+        <span className="emoji">{palette.emoji}</span>
+      </footer>
     </div>
   );
 }
