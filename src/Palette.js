@@ -8,7 +8,7 @@ function Palette({ palette }) {
   const [format, setFormat] = useState('hex');
 
   const colorBoxes = palette.colors[level].map((color) => (
-    <ColorBox background={color[format]} name={color.name} />
+    <ColorBox key={color.id} background={color[format]} name={color.name} />
   ));
   return (
     <div className="Palette">
