@@ -19,7 +19,7 @@ function Palette({ palette }) {
         setFormat={setFormat}
       />
       <div className="Palette-colors">{colorBoxes}</div>
-      {/* Footer goes here */}
+      <footer className="Palette-footer" />
     </div>
   );
 }
