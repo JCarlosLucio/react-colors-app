@@ -1,10 +1,14 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
-function MiniPalette() {
+function MiniPalette({ paletteName, emoji, id, colors }) {
   return (
     <div>
-      <h1>Mini Palette</h1>
+      <div />
+      <h5>
+        {paletteName}
+        <span>{emoji}</span>
+      </h5>
     </div>
   );
 }
