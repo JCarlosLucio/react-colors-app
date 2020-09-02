@@ -4,11 +4,11 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   root: {
-    height: '100%',
+    height: '100vh',
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: '#2a2e64',
   },
   container: {
     width: '50%',
