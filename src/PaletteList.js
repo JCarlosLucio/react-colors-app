@@ -8,9 +8,15 @@ const styles = {
 
 function PaletteList({ classes, palettes }) {
   return (
-    <div>
-      <h1>React Colors</h1>
-      {palettes.map((palette) => <MiniPalette {...palette} />)}
+    <div className={classes.root}>
+      <div className={classes.container}>
+        <nav className={classes.nav}>
+          <h1>React Colors App</h1>
+        </nav>
+        <div className={classes.palettes}>
+          {palettes.map((palette) => <MiniPalette {...palette} />)}
+        </div>
+      </div>
     </div>
   );
 }
