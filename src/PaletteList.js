@@ -3,7 +3,33 @@ import MiniPalette from './MiniPalette';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
-  root: {},
+  root: {
+    height: '100%',
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    backgroundColor: 'blue',
+  },
+  container: {
+    width: '50%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    flexWrap: 'wrap',
+  },
+  nav: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    color: 'white',
+  },
+  palettes: {
+    width: '100%',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 30%)',
+    gridGap: '5%',
+    boxSizing: 'border-box',
+  },
 };
 
 function PaletteList({ classes, palettes }) {
