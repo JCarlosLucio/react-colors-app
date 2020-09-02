@@ -2,7 +2,11 @@ import React from 'react';
 import MiniPalette from './MiniPalette';
 import { withStyles } from '@material-ui/core/styles';
 
-function PaletteList({ palettes }) {
+const styles = {
+  root: {},
+};
+
+function PaletteList({ classes, palettes }) {
   return (
     <div>
       <h1>React Colors</h1>
@@ -11,4 +15,4 @@ function PaletteList({ palettes }) {
   );
 }
 
-export default PaletteList;
+export default withStyles(styles)(PaletteList);
