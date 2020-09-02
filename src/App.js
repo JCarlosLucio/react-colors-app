@@ -13,13 +13,13 @@ function App() {
       <Route
         exact
         path="/palette/:id"
-        render={() => <h1>INDIVIDUAL PALETTE GOES HERE</h1>}
+        render={(routeProps) => (
+          <Palette
+            palette={generatePalette(findPalette(routeProps.match.params.id))}
+          />
+        )}
       />
     </Switch>
-
-    // <div>
-    //   <Palette palette={generatePalette(seedColors[4])} />
-    // </div>
   );
 }
 
