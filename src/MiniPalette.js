@@ -1,16 +1,23 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
-function MiniPalette({ paletteName, emoji, id, colors }) {
+const styles = {
+  root: {},
+  colors: {},
+  title: {},
+  emoji: {},
+};
+
+function MiniPalette({ classes, paletteName, emoji, id, colors }) {
   return (
-    <div>
-      <div />
-      <h5>
+    <div className={classes.root}>
+      <div className={classes.colors} />
+      <h5 className={classes.title}>
         {paletteName}
-        <span>{emoji}</span>
+        <span className={classes.emoji}>{emoji}</span>
       </h5>
     </div>
   );
 }
 
-export default MiniPalette;
+export default withStyles(styles)(MiniPalette);
