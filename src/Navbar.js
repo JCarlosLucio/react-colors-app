@@ -6,12 +6,14 @@ import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import LevelSlider from './LevelSlider';
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
 import './Navbar.css';
 
 function Navbar({ level, setLevel, format, setFormat }) {
   const [open, setOpen] = useState(false);
+
+  const handleLevelChange = (e, newValue) => {
+    setLevel(newValue);
+  };
 
   const handleFormatChange = (e) => {
     setFormat(e.target.value);
@@ -30,19 +32,13 @@ function Navbar({ level, setLevel, format, setFormat }) {
       <div className="slider-container">
         <span>Level: {level}</span>
         <div className="slider">
-          <Slider
-            defaultValue={level}
+          <LevelSlider
+            aria-label="level slider"
+            value={level}
             min={100}
             max={900}
             step={100}
-            onAfterChange={(newLevel) => setLevel(newLevel)}
-            trackStyle={{ backgroundColor: 'transparent' }}
-            handleStyle={{
-              backgroundColor: 'green',
-              borderColor: 'green',
-              marginTop: -3,
-            }}
-            railStyle={{ height: 8 }}
+            onChange={handleLevelChange}
           />
         </div>
       </div>
