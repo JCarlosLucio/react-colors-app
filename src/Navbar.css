@@ -21,10 +21,18 @@
   color: black;
 }
 
+/* Added to center LevelSlider and Level span */
+.slider-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .slider {
   width: 340px;
   margin-left: 10px;
-  display: inline-block;
+  margin-top: 3px;
+  /* display: inline-block; */
 }
 
 .select-container {
