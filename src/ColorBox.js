@@ -24,7 +24,9 @@ function ColorBox({ background, name }) {
           </div>
           <button className="copy-button">COPY</button>
         </div>
-        <span className="see-more">MORE</span>
+        <Link to="/" onClick={(e) => e.stopPropagation()}>
+          <span className="see-more">MORE</span>
+        </Link>
       </div>
     </CopyToClipboard>
   );
