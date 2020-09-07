@@ -1,6 +1,7 @@
 import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import useTimedToggle from './hooks/useTimedToggle';
+import { Link } from 'react-router-dom';
 import './ColorBox.css';
 
 function ColorBox({ background, name }) {
