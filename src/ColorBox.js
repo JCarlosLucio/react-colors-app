@@ -4,7 +4,7 @@ import useTimedToggle from './hooks/useTimedToggle';
 import { Link } from 'react-router-dom';
 import './ColorBox.css';
 
-function ColorBox({ background, name, moreUrl }) {
+function ColorBox({ background, name, moreUrl, showLink }) {
   const [isCopied, toggleIsCopied] = useTimedToggle(1500);
 
   return (
@@ -24,9 +24,11 @@ function ColorBox({ background, name, moreUrl }) {
           </div>
           <button className="copy-button">COPY</button>
         </div>
-        <Link to={moreUrl} onClick={(e) => e.stopPropagation()}>
-          <span className="see-more">MORE</span>
-        </Link>
+        {showLink && (
+          <Link to={moreUrl} onClick={(e) => e.stopPropagation()}>
+            <span className="see-more">MORE</span>
+          </Link>
+        )}
       </div>
     </CopyToClipboard>
   );
