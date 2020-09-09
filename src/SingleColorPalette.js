@@ -13,9 +13,14 @@ const gatherShades = (palette, colorId) => {
 function SingleColorPalette({ palette, colorId }) {
   const shades = gatherShades(palette, colorId);
 
+  const colorBoxes = shades.map((color) => (
+    <ColorBox key={color.name} background={color.hex} name={color.name} />
+  ));
+
   return (
     <div>
       <h1>SINGLE COLOR PALETTE</h1>
+      <div>{colorBoxes}</div>
     </div>
   );
 }
