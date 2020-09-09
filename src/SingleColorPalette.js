@@ -1,4 +1,5 @@
 import React from 'react';
+import ColorBox from './ColorBox';
 
 const gatherShades = (palette, colorId) => {
   const shades = [];
