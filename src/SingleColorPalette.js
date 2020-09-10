@@ -27,7 +27,6 @@ function SingleColorPalette({ palette, colorId }) {
   return (
     <div>
       <Navbar format={format} setFormat={setFormat} showingAllColors={false} />
-      <h1>SINGLE COLOR PALETTE</h1>
       <div>{colorBoxes}</div>
     </div>
   );
