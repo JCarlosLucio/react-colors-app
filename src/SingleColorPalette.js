@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ColorBox from './ColorBox';
 
 const gatherShades = (palette, colorId) => {
@@ -11,6 +11,7 @@ const gatherShades = (palette, colorId) => {
 };
 
 function SingleColorPalette({ palette, colorId }) {
+  const [format, setFormat] = useState('hex');
   const shades = gatherShades(palette, colorId);
 
   const colorBoxes = shades.map((color) => (
