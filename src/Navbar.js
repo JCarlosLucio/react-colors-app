@@ -8,7 +8,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import LevelSlider from './LevelSlider';
 import './Navbar.css';
 
-function Navbar({ level, setLevel, format, setFormat }) {
+function Navbar({ level, setLevel, format, setFormat, showingAllColors }) {
   const [open, setOpen] = useState(false);
 
   const handleLevelChange = (e, newValue) => {
@@ -29,19 +29,21 @@ function Navbar({ level, setLevel, format, setFormat }) {
       <div className="logo">
         <Link to="/">reactcolorapp</Link>
       </div>
-      <div className="slider-container">
-        <span>Level: {level}</span>
-        <div className="slider">
-          <LevelSlider
-            aria-label="level slider"
-            value={level}
-            min={100}
-            max={900}
-            step={100}
-            onChange={handleLevelChange}
-          />
+      {showingAllColors && (
+        <div className="slider-container">
+          <span>Level: {level}</span>
+          <div className="slider">
+            <LevelSlider
+              aria-label="level slider"
+              value={level}
+              min={100}
+              max={900}
+              step={100}
+              onChange={handleLevelChange}
+            />
+          </div>
         </div>
-      </div>
+      )}
       <div className="select-container">
         <Select value={format} onChange={handleFormatChange}>
           <MenuItem value="hex">HEX - #ffffff</MenuItem>
