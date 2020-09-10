@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from './Navbar';
 import ColorBox from './ColorBox';
 
 const gatherShades = (palette, colorId) => {
@@ -25,6 +26,7 @@ function SingleColorPalette({ palette, colorId }) {
 
   return (
     <div>
+      <Navbar format={format} setFormat={setFormat} showingAllColors={false} />
       <h1>SINGLE COLOR PALETTE</h1>
       <div>{colorBoxes}</div>
     </div>
