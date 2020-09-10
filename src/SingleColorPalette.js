@@ -18,7 +18,7 @@ function SingleColorPalette({ palette, colorId }) {
   const colorBoxes = shades.map((color) => (
     <ColorBox
       key={color.name}
-      background={color.hex}
+      background={color[format]}
       name={color.name}
       showLink={false}
     />
