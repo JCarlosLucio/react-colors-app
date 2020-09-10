@@ -23,6 +23,7 @@ function Palette({ palette }) {
         setLevel={setLevel}
         format={format}
         setFormat={setFormat}
+        showingAllColors
       />
       <div className="Palette-colors">{colorBoxes}</div>
       <footer className="Palette-footer">
