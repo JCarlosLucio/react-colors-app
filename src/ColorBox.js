@@ -2,10 +2,13 @@ import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import useTimedToggle from './hooks/useTimedToggle';
 import { Link } from 'react-router-dom';
+import chroma from 'chroma-js';
 import './ColorBox.css';
 
 function ColorBox({ background, name, moreUrl, showLink }) {
   const [isCopied, toggleIsCopied] = useTimedToggle(1500);
+  const isDarkColor = chroma(background).luminance() <= 0.05;
+  console.log(isDarkColor, chroma(background).luminance());
 
   return (
     <CopyToClipboard text={background} onCopy={toggleIsCopied}>
