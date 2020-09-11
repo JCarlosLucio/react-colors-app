@@ -26,9 +26,9 @@ function SingleColorPalette({ palette, colorId }) {
   ));
 
   return (
-    <div>
+    <div className="SingleColorPalette Palette">
       <Navbar format={format} setFormat={setFormat} showingAllColors={false} />
-      <div>{colorBoxes}</div>
+      <div className="Palette-colors">{colorBoxes}</div>
       <PaletteFooter paletteName={palette.paletteName} emoji={palette.emoji} />
     </div>
   );
