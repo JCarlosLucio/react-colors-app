@@ -27,7 +27,9 @@ function ColorBox({ background, name, moreUrl, showLink }) {
               {name}
             </span>
           </div>
-          <button className="copy-button">COPY</button>
+          <button className={`copy-button ${isLightColor && 'dark-text'}`}>
+            COPY
+          </button>
         </div>
         {showLink && (
           <Link to={moreUrl} onClick={(e) => e.stopPropagation()}>
