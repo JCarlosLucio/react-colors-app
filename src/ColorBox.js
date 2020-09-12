@@ -8,6 +8,7 @@ import './ColorBox.css';
 function ColorBox({ background, name, moreUrl, showLink }) {
   const [isCopied, toggleIsCopied] = useTimedToggle(1500);
   const isDarkColor = chroma(background).luminance() <= 0.2;
+  const isLightColor = chroma(background).luminance() >= 0.5;
 
   return (
     <CopyToClipboard text={background} onCopy={toggleIsCopied}>
@@ -30,7 +31,9 @@ function ColorBox({ background, name, moreUrl, showLink }) {
         </div>
         {showLink && (
           <Link to={moreUrl} onClick={(e) => e.stopPropagation()}>
-            <span className="see-more">MORE</span>
+            <span className={`see-more ${isLightColor && 'dark-text'}`}>
+              MORE
+            </span>
           </Link>
         )}
       </div>
