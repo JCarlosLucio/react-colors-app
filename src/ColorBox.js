@@ -7,8 +7,7 @@ import './ColorBox.css';
 
 function ColorBox({ background, name, moreUrl, showLink }) {
   const [isCopied, toggleIsCopied] = useTimedToggle(1500);
-  const isDarkColor = chroma(background).luminance() <= 0.05;
-  console.log(isDarkColor, chroma(background).luminance());
+  const isDarkColor = chroma(background).luminance() <= 0.2;
 
   return (
     <CopyToClipboard text={background} onCopy={toggleIsCopied}>
@@ -23,7 +22,9 @@ function ColorBox({ background, name, moreUrl, showLink }) {
         </div>
         <div className="copy-container">
           <div className="box-content">
-            <span>{name}</span>
+            <span className={isDarkColor ? 'light-text' : undefined}>
+              {name}
+            </span>
           </div>
           <button className="copy-button">COPY</button>
         </div>
