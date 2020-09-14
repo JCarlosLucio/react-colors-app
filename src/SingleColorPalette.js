@@ -22,7 +22,7 @@ function SingleColorPalette({ palette, colorId }) {
       key={color.name}
       background={color[format]}
       name={color.name}
-      showLink={false}
+      showingFullPalette={false}
     />
   ));
 

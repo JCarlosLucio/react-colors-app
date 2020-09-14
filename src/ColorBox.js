@@ -65,7 +65,7 @@ const styles = {
   },
 };
 
-function ColorBox({ background, name, moreUrl, showLink, classes }) {
+function ColorBox({ background, name, moreUrl, showingFullPalette, classes }) {
   const [isCopied, toggleIsCopied] = useTimedToggle(1500);
   const isDarkColor = chroma(background).luminance() <= 0.2;
   const isLightColor = chroma(background).luminance() >= 0.5;
@@ -87,7 +87,7 @@ function ColorBox({ background, name, moreUrl, showLink, classes }) {
           </div>
           <button className={classes.copyButton}>COPY</button>
         </div>
-        {showLink && (
+        {showingFullPalette && (
           <Link to={moreUrl} onClick={(e) => e.stopPropagation()}>
             <span className={classes.seeMore}>MORE</span>
           </Link>
