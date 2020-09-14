@@ -7,6 +7,15 @@ import { withStyles } from '@material-ui/core/styles';
 import './ColorBox.css';
 
 const styles = {
+  ColorBox: {
+    width: '20%',
+    height: '25%',
+    margin: '0 auto',
+    display: 'inline-block',
+    position: 'relative',
+    cursor: 'pointer',
+    marginBottom: '-4px',
+  },
   copyText: {
     color: ({ background }) =>
       chroma(background).luminance() >= 0.5 ? 'black' : 'white',
@@ -58,7 +67,7 @@ function ColorBox({ background, name, moreUrl, showLink, classes }) {
 
   return (
     <CopyToClipboard text={background} onCopy={toggleIsCopied}>
-      <div style={{ background }} className="ColorBox">
+      <div style={{ background }} className={classes.ColorBox}>
         <div
           style={{ background }}
           className={`copy-overlay ${isCopied && 'show'}`}
