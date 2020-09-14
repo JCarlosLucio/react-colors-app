@@ -15,6 +15,20 @@ const styles = {
     color: ({ background }) =>
       chroma(background).luminance() <= 0.2 ? 'white' : 'black',
   },
+  seeMore: {
+    color: ({ background }) =>
+      chroma(background).luminance() >= 0.5 ? 'rgba(0, 0, 0, 0.6)' : 'white',
+    background: 'rgba(255, 255, 255, 0.3)',
+    position: 'absolute',
+    border: 'none',
+    right: '0',
+    bottom: '0',
+    width: '60px',
+    height: '30px',
+    textAlign: 'center',
+    lineHeight: '30px',
+    textTransform: 'uppercase',
+  },
 };
 
 function ColorBox({ background, name, moreUrl, showLink, classes }) {
@@ -43,9 +57,7 @@ function ColorBox({ background, name, moreUrl, showLink, classes }) {
         </div>
         {showLink && (
           <Link to={moreUrl} onClick={(e) => e.stopPropagation()}>
-            <span className={`see-more ${isLightColor && 'dark-text'}`}>
-              MORE
-            </span>
+            <span className={classes.seeMore}>MORE</span>
           </Link>
         )}
       </div>
