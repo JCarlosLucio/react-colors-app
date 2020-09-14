@@ -15,6 +15,10 @@ const styles = {
     position: 'relative',
     cursor: 'pointer',
     marginBottom: '-4px',
+    '&:hover button': {
+      opacity: 1,
+      transition: '0.5s',
+    },
   },
   copyText: {
     color: ({ background }) =>
@@ -57,6 +61,7 @@ const styles = {
     textTransform: 'uppercase',
     textDecoration: 'none',
     border: 'none',
+    opacity: 0,
   },
 };
 
