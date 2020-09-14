@@ -9,7 +9,7 @@ import './ColorBox.css';
 const styles = {
   ColorBox: {
     width: '20%',
-    height: '25%',
+    height: ({ showingFullPalette }) => (showingFullPalette ? '25%' : '50%'),
     margin: '0 auto',
     display: 'inline-block',
     position: 'relative',
