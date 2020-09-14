@@ -74,6 +74,20 @@ const styles = {
     textTransform: 'uppercase',
     fontSize: '12px',
   },
+  copyOverlay: {
+    opacity: '0',
+    zIndex: '0',
+    width: '100%',
+    height: '100%',
+    transition: 'transform 0.6s ease-in-out',
+    transform: 'scale(0.1)',
+  },
+  showOverlay: {
+    opacity: '1',
+    transform: 'scale(50)',
+    zIndex: '10',
+    position: 'absolute',
+  },
 };
 
 function ColorBox({ background, name, moreUrl, showingFullPalette, classes }) {
@@ -84,7 +98,8 @@ function ColorBox({ background, name, moreUrl, showingFullPalette, classes }) {
       <div style={{ background }} className={classes.ColorBox}>
         <div
           style={{ background }}
-          className={`copy-overlay ${isCopied && 'show'}`}
+          className={`${classes.copyOverlay} ${isCopied &&
+            classes.showOverlay}`}
         />
         <div className={`copy-msg ${isCopied && 'show'}`}>
           <h1>COPIED!</h1>
