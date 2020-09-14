@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import chroma from 'chroma-js';
 import './ColorBox.css';
 
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = {};
+
 function ColorBox({ background, name, moreUrl, showLink }) {
   const [isCopied, toggleIsCopied] = useTimedToggle(1500);
   const isDarkColor = chroma(background).luminance() <= 0.2;
@@ -43,4 +47,4 @@ function ColorBox({ background, name, moreUrl, showLink }) {
   );
 }
 
-export default ColorBox;
+export default withStyles(styles)(ColorBox);
