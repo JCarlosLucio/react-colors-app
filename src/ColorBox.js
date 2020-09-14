@@ -3,13 +3,21 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import useTimedToggle from './hooks/useTimedToggle';
 import { Link } from 'react-router-dom';
 import chroma from 'chroma-js';
+import { withStyles } from '@material-ui/core/styles';
 import './ColorBox.css';
 
-import { withStyles } from '@material-ui/core/styles';
+const styles = {
+  copyText: {
+    color: ({ background }) =>
+      chroma(background).luminance() >= 0.5 ? 'black' : 'white',
+  },
+  colorName: {
+    color: ({ background }) =>
+      chroma(background).luminance() <= 0.2 ? 'white' : 'black',
+  },
+};
 
-const styles = {};
-
-function ColorBox({ background, name, moreUrl, showLink }) {
+function ColorBox({ background, name, moreUrl, showLink, classes }) {
   const [isCopied, toggleIsCopied] = useTimedToggle(1500);
   const isDarkColor = chroma(background).luminance() <= 0.2;
   const isLightColor = chroma(background).luminance() >= 0.5;
@@ -23,13 +31,11 @@ function ColorBox({ background, name, moreUrl, showLink }) {
         />
         <div className={`copy-msg ${isCopied && 'show'}`}>
           <h1>COPIED!</h1>
-          <p className={isLightColor ? 'dark-text' : undefined}>{background}</p>
+          <p className={classes.copyText}>{background}</p>
         </div>
         <div className="copy-container">
           <div className="box-content">
-            <span className={isDarkColor ? 'light-text' : undefined}>
-              {name}
-            </span>
+            <span className={classes.colorName}>{name}</span>
           </div>
           <button className={`copy-button ${isLightColor && 'dark-text'}`}>
             COPY
