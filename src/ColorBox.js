@@ -29,6 +29,26 @@ const styles = {
     lineHeight: '30px',
     textTransform: 'uppercase',
   },
+  copyButton: {
+    color: ({ background }) =>
+      chroma(background).luminance() >= 0.5 ? 'rgba(0, 0, 0, 0.6)' : 'white',
+    width: '100px',
+    height: '30px',
+    position: 'absolute',
+    display: 'inline-block',
+    top: '50%',
+    left: '50%',
+    marginLeft: '-50px',
+    marginTop: '-15px',
+    textAlign: 'center',
+    outline: 'none',
+    background: 'rgba(255, 255, 255, 0.3)',
+    fontSize: '1rem',
+    lineHeight: '30px',
+    textTransform: 'uppercase',
+    textDecoration: 'none',
+    border: 'none',
+  },
 };
 
 function ColorBox({ background, name, moreUrl, showLink, classes }) {
@@ -51,9 +71,7 @@ function ColorBox({ background, name, moreUrl, showLink, classes }) {
           <div className="box-content">
             <span className={classes.colorName}>{name}</span>
           </div>
-          <button className={`copy-button ${isLightColor && 'dark-text'}`}>
-            COPY
-          </button>
+          <button className={classes.copyButton}>COPY</button>
         </div>
         {showLink && (
           <Link to={moreUrl} onClick={(e) => e.stopPropagation()}>
