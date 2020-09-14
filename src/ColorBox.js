@@ -63,6 +63,17 @@ const styles = {
     border: 'none',
     opacity: 0,
   },
+  boxContent: {
+    position: 'absolute',
+    padding: '10px',
+    width: '100%',
+    left: '0',
+    bottom: '0',
+    color: 'black',
+    letterSpacing: '1px',
+    textTransform: 'uppercase',
+    fontSize: '12px',
+  },
 };
 
 function ColorBox({ background, name, moreUrl, showingFullPalette, classes }) {
@@ -79,8 +90,8 @@ function ColorBox({ background, name, moreUrl, showingFullPalette, classes }) {
           <h1>COPIED!</h1>
           <p className={classes.copyText}>{background}</p>
         </div>
-        <div className="copy-container">
-          <div className="box-content">
+        <div>
+          <div className={classes.boxContent}>
             <span className={classes.colorName}>{name}</span>
           </div>
           <button className={classes.copyButton}>COPY</button>
