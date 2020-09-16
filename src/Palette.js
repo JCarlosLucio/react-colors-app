@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import ColorBox from './ColorBox';
 import Navbar from './Navbar';
 import PaletteFooter from './PaletteFooter';
+import { withStyles } from '@material-ui/core/styles';
 import './Palette.css';
+
+const styles = {};
 
 function Palette({ palette }) {
   const [level, setLevel] = useState(500);
@@ -32,4 +35,4 @@ function Palette({ palette }) {
   );
 }
 
-export default Palette;
+export default withStyles(styles)(Palette);
