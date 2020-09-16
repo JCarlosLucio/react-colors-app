@@ -5,9 +5,15 @@ import PaletteFooter from './PaletteFooter';
 import { withStyles } from '@material-ui/core/styles';
 import './Palette.css';
 
-const styles = {};
+const styles = {
+  Palette: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100vh',
+  },
+};
 
-function Palette({ palette }) {
+function Palette({ palette, classes }) {
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState('hex');
 
@@ -21,7 +27,7 @@ function Palette({ palette }) {
     />
   ));
   return (
-    <div className="Palette">
+    <div className={classes.Palette}>
       <Navbar
         level={level}
         setLevel={setLevel}
