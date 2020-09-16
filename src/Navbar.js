@@ -41,6 +41,10 @@ const styles = {
     marginLeft: '10px',
     marginTop: '3px',
   },
+  selectContainer: {
+    marginLeft: 'auto',
+    marginRight: '1rem',
+  },
 };
 
 function Navbar({
@@ -86,7 +90,7 @@ function Navbar({
           </div>
         </div>
       )}
-      <div className="select-container">
+      <div className={classes.selectContainer}>
         <Select value={format} onChange={handleFormatChange}>
           <MenuItem value="hex">HEX - #ffffff</MenuItem>
           <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
