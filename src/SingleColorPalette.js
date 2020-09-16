@@ -14,7 +14,13 @@ const gatherShades = (palette, colorId) => {
   return shades.slice(1);
 };
 
-const styles = {};
+const styles = {
+  Palette: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100vh',
+  },
+};
 
 function SingleColorPalette({ palette, colorId, classes }) {
   const [format, setFormat] = useState('hex');
@@ -30,7 +36,7 @@ function SingleColorPalette({ palette, colorId, classes }) {
   ));
 
   return (
-    <div className="SingleColorPalette Palette">
+    <div className={classes.Palette}>
       <Navbar format={format} setFormat={setFormat} showingAllColors={false} />
       <div className="Palette-colors">
         {colorBoxes}
