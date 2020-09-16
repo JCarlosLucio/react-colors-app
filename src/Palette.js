@@ -11,6 +11,9 @@ const styles = {
     flexDirection: 'column',
     height: '100vh',
   },
+  colors: {
+    height: '90%',
+  },
 };
 
 function Palette({ palette, classes }) {
@@ -35,7 +38,7 @@ function Palette({ palette, classes }) {
         setFormat={setFormat}
         showingAllColors
       />
-      <div className="Palette-colors">{colorBoxes}</div>
+      <div className={classes.colors}>{colorBoxes}</div>
       <PaletteFooter paletteName={palette.paletteName} emoji={palette.emoji} />
     </div>
   );
