@@ -20,6 +20,9 @@ const styles = {
     flexDirection: 'column',
     height: '100vh',
   },
+  colors: {
+    height: '90%',
+  },
 };
 
 function SingleColorPalette({ palette, colorId, classes }) {
@@ -38,7 +41,7 @@ function SingleColorPalette({ palette, colorId, classes }) {
   return (
     <div className={classes.Palette}>
       <Navbar format={format} setFormat={setFormat} showingAllColors={false} />
-      <div className="Palette-colors">
+      <div className={classes.colors}>
         {colorBoxes}
         <div className="go-back ColorBox">
           <Link to={`/palette/${palette.id}`} className="back-button">
