@@ -1,4 +1,7 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = {};
 
 function PaletteFooter({ paletteName, emoji }) {
   return (
@@ -9,4 +12,4 @@ function PaletteFooter({ paletteName, emoji }) {
   );
 }
 
-export default PaletteFooter;
+export default withStyles(styles)(PaletteFooter);
