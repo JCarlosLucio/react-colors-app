@@ -9,9 +9,23 @@ import LevelSlider from './LevelSlider';
 import { withStyles } from '@material-ui/core/styles';
 import './Navbar.css';
 
-const styles = {};
+const styles = {
+  Navbar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    height: '6vh',
+  },
+};
 
-function Navbar({ level, setLevel, format, setFormat, showingAllColors }) {
+function Navbar({
+  level,
+  setLevel,
+  format,
+  setFormat,
+  showingAllColors,
+  classes,
+}) {
   const [open, setOpen] = useState(false);
 
   const handleLevelChange = (e, newValue) => {
@@ -28,7 +42,7 @@ function Navbar({ level, setLevel, format, setFormat, showingAllColors }) {
   };
 
   return (
-    <nav className="Navbar">
+    <nav className={classes.Navbar}>
       <div className="logo">
         <Link to="/">reactcolorapp</Link>
       </div>
