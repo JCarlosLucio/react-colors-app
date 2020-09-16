@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import ColorBox from './ColorBox';
 import PaletteFooter from './PaletteFooter';
+import { withStyles } from '@material-ui/core/styles';
 
 const gatherShades = (palette, colorId) => {
   const shades = [];
@@ -13,7 +14,9 @@ const gatherShades = (palette, colorId) => {
   return shades.slice(1);
 };
 
-function SingleColorPalette({ palette, colorId }) {
+const styles = {};
+
+function SingleColorPalette({ palette, colorId, classes }) {
   const [format, setFormat] = useState('hex');
   const shades = gatherShades(palette, colorId);
 
@@ -42,4 +45,4 @@ function SingleColorPalette({ palette, colorId }) {
   );
 }
 
-export default SingleColorPalette;
+export default withStyles(styles)(SingleColorPalette);
