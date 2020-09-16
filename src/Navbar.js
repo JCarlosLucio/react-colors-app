@@ -6,7 +6,10 @@ import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import LevelSlider from './LevelSlider';
+import { withStyles } from '@material-ui/core/styles';
 import './Navbar.css';
+
+const styles = {};
 
 function Navbar({ level, setLevel, format, setFormat, showingAllColors }) {
   const [open, setOpen] = useState(false);
@@ -76,4 +79,4 @@ function Navbar({ level, setLevel, format, setFormat, showingAllColors }) {
   );
 }
 
-export default Navbar;
+export default withStyles(styles)(Navbar);
