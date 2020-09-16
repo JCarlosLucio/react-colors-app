@@ -30,6 +30,17 @@ const styles = {
       color: 'black',
     },
   },
+  //Added to center LevelSlider and Level span
+  sliderContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  slider: {
+    width: '340px',
+    marginLeft: '10px',
+    marginTop: '3px',
+  },
 };
 
 function Navbar({
@@ -61,9 +72,9 @@ function Navbar({
         <Link to="/">reactcolorapp</Link>
       </div>
       {showingAllColors && (
-        <div className="slider-container">
+        <div className={classes.sliderContainer}>
           <span>Level: {level}</span>
-          <div className="slider">
+          <div className={classes.slider}>
             <LevelSlider
               aria-label="level slider"
               value={level}
