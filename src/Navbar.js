@@ -16,6 +16,20 @@ const styles = {
     justifyContent: 'flex-start',
     height: '6vh',
   },
+  logo: {
+    display: 'flex',
+    alignItems: 'center',
+    marginRight: '15px',
+    padding: '0 13px',
+    fontSize: '22px',
+    backgroundColor: '#eceff1',
+    fontFamily: 'Roboto, sans-serif',
+    height: '100%',
+    '& a': {
+      textDecoration: 'none',
+      color: 'black',
+    },
+  },
 };
 
 function Navbar({
@@ -43,7 +57,7 @@ function Navbar({
 
   return (
     <nav className={classes.Navbar}>
-      <div className="logo">
+      <div className={classes.logo}>
         <Link to="/">reactcolorapp</Link>
       </div>
       {showingAllColors && (
