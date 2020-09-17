@@ -17,7 +17,11 @@ export default {
     width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
     color: 'white',
+    '& a': {
+      color: 'inherit',
+    },
   },
   palettes: {
     width: '100%',
