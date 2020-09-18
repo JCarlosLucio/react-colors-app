@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { ChromePicker } from 'react-color';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -11,7 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
-const drawerWidth = 240;
+const drawerWidth = 400;
 
 const styles = (theme) => ({
   root: {
@@ -119,6 +120,10 @@ function NewPaletteForm({ classes }) {
           </IconButton>
         </div>
         <Divider />
+        <ChromePicker
+          color="purple"
+          onChangeComplete={(newColor) => console.log(newColor)}
+        />
       </Drawer>
       <main
         className={clsx(classes.content, {
