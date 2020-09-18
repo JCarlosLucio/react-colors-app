@@ -153,13 +153,13 @@ function NewPaletteForm({ classes }) {
           color={currentColor}
           onChangeComplete={updateCurrentColor}
         />
-        <ValidatorForm>
+        <ValidatorForm onSubmit={addNewColor}>
           <TextValidator value={newName} onChange={handleChange} />
           <Button
             variant="contained"
+            type="submit"
             color="primary"
             style={{ backgroundColor: currentColor }}
-            onClick={addNewColor}
           >
             Add Color
           </Button>
