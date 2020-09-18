@@ -168,8 +168,12 @@ function NewPaletteForm({ classes }) {
           <TextValidator
             value={newName}
             onChange={handleChange}
-            validators={['isColorNameUnique', 'isColorUnique']}
-            errorMessages={['Color name must be unique', 'Color already used!']}
+            validators={['required', 'isColorNameUnique', 'isColorUnique']}
+            errorMessages={[
+              'Enter a color name',
+              'Color name must be unique',
+              'Color already used!',
+            ]}
           />
           <Button
             variant="contained"
