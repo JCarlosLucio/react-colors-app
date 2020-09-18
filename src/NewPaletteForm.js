@@ -77,9 +77,9 @@ const styles = (theme) => ({
 
 function NewPaletteForm({ classes }) {
   const [open, setOpen] = useState(false);
+  const [newName, setNewName] = useState('');
   const [currentColor, setCurrentColor] = useState('teal');
   const [colors, setColors] = useState(['purple', '#3A44D7']);
-  const [newName, setNewName] = useState('');
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -87,6 +87,10 @@ function NewPaletteForm({ classes }) {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleChange = (e) => {
+    setNewName(e.target.value);
   };
 
   const updateCurrentColor = (newColor) => {
@@ -150,7 +154,7 @@ function NewPaletteForm({ classes }) {
           onChangeComplete={updateCurrentColor}
         />
         <ValidatorForm>
-          <TextValidator />
+          <TextValidator value={newName} onChange={handleChange} />
           <Button
             variant="contained"
             color="primary"
