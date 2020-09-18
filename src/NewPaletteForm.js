@@ -84,6 +84,10 @@ function NewPaletteForm({ classes }) {
     setOpen(false);
   };
 
+  const updateCurrentColor = (newColor) => {
+    setCurrentColor(newColor.hex);
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -133,8 +137,8 @@ function NewPaletteForm({ classes }) {
           </Button>
         </div>
         <ChromePicker
-          color="purple"
-          onChangeComplete={(newColor) => console.log(newColor)}
+          color={currentColor}
+          onChangeComplete={updateCurrentColor}
         />
         <Button variant="contained" color="primary">
           Add Color
