@@ -75,6 +75,7 @@ const styles = (theme) => ({
 function NewPaletteForm({ classes }) {
   const [open, setOpen] = useState(false);
   const [currentColor, setCurrentColor] = useState('teal');
+  const [colors, setColors] = useState(['purple', '#3A44D7']);
 
   const handleDrawerOpen = () => {
     setOpen(true);
