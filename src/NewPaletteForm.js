@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { ChromePicker } from 'react-color';
@@ -81,6 +81,13 @@ function NewPaletteForm({ classes }) {
   const [currentColor, setCurrentColor] = useState('teal');
   const [colors, setColors] = useState([]);
 
+  // validators - for TextValidator
+  useEffect(() => {
+    ValidatorForm.addValidationRule('isColorNameUnique', (value) =>
+      colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase())
+    );
+  });
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -155,7 +162,12 @@ function NewPaletteForm({ classes }) {
           onChangeComplete={updateCurrentColor}
         />
         <ValidatorForm onSubmit={addNewColor}>
-          <TextValidator value={newName} onChange={handleChange} />
+          <TextValidator
+            value={newName}
+            onChange={handleChange}
+            validators={['isColorNameUnique']}
+            errorMessages={['Color name must be unique']}
+          />
           <Button
             variant="contained"
             type="submit"
