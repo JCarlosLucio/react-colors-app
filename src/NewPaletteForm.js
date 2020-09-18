@@ -110,6 +110,7 @@ function NewPaletteForm({ classes }) {
   const addNewColor = () => {
     const newColor = { color: currentColor, name: newName };
     setColors([...colors, newColor]);
+    setNewName('');
   };
 
   return (
