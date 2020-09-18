@@ -140,7 +140,11 @@ function NewPaletteForm({ classes }) {
           color={currentColor}
           onChangeComplete={updateCurrentColor}
         />
-        <Button variant="contained" color="primary">
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ backgroundColor: currentColor }}
+        >
           Add Color
         </Button>
       </Drawer>
