@@ -149,6 +149,7 @@ function NewPaletteForm({ classes }) {
           variant="contained"
           color="primary"
           style={{ backgroundColor: currentColor }}
+          onClick={addNewColor}
         >
           Add Color
         </Button>
