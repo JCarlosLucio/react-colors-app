@@ -89,6 +89,10 @@ function NewPaletteForm({ classes }) {
     setCurrentColor(newColor.hex);
   };
 
+  const addNewColor = () => {
+    setColors([...colors, currentColor]);
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
