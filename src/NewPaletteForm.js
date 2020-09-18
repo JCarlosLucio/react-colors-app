@@ -172,7 +172,9 @@ function NewPaletteForm({ classes }) {
         })}
       >
         <div className={classes.drawerHeader} />
-        {colors.map((color) => <DraggableColorBox color={color} />)}
+        {colors.map((color) => (
+          <DraggableColorBox color={color.color} name={color.name} />
+        ))}
       </main>
     </div>
   );
