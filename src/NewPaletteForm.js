@@ -79,7 +79,7 @@ function NewPaletteForm({ classes }) {
   const [open, setOpen] = useState(false);
   const [newName, setNewName] = useState('');
   const [currentColor, setCurrentColor] = useState('teal');
-  const [colors, setColors] = useState(['purple', '#3A44D7']);
+  const [colors, setColors] = useState([]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -98,7 +98,8 @@ function NewPaletteForm({ classes }) {
   };
 
   const addNewColor = () => {
-    setColors([...colors, currentColor]);
+    const newColor = { color: currentColor, name: newName };
+    setColors([...colors, newColor]);
   };
 
   return (
