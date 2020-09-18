@@ -120,6 +120,7 @@ function NewPaletteForm({ classes }) {
           </IconButton>
         </div>
         <Divider />
+        <Typography variant="h4">Design Your Palette</Typography>
         <ChromePicker
           color="purple"
           onChangeComplete={(newColor) => console.log(newColor)}
