@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { ChromePicker } from 'react-color';
 import { withStyles } from '@material-ui/core/styles';
@@ -73,7 +73,8 @@ const styles = (theme) => ({
 });
 
 function NewPaletteForm({ classes }) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [currentColor, setCurrentColor] = useState('teal');
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -82,6 +83,7 @@ function NewPaletteForm({ classes }) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
