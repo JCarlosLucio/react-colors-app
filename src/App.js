@@ -9,6 +9,7 @@ import { generatePalette } from './helpers/colorHelpers';
 
 function App() {
   const findPalette = (id) => seedColors.find((palette) => palette.id === id);
+  const savePalette = (newPalette) => console.log(newPalette);
 
   return (
     <Switch>
@@ -19,7 +20,11 @@ function App() {
           <PaletteList palettes={seedColors} {...routeProps} />
         )}
       />
-      <Route exact path="/palette/new" render={() => <NewPaletteForm />} />
+      <Route
+        exact
+        path="/palette/new"
+        render={() => <NewPaletteForm savePalette={savePalette} />}
+      />
       <Route
         exact
         path="/palette/:id"
