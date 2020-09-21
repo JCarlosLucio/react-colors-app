@@ -75,7 +75,7 @@ const styles = (theme) => ({
   },
 });
 
-function NewPaletteForm({ savePalette, history, classes }) {
+function NewPaletteForm({ palettes, savePalette, history, classes }) {
   const [open, setOpen] = useState(false);
   const [newName, setNewName] = useState({ colorName: '', paletteName: '' });
   const [currentColor, setCurrentColor] = useState('teal');
@@ -88,6 +88,11 @@ function NewPaletteForm({ savePalette, history, classes }) {
     );
     ValidatorForm.addValidationRule('isColorUnique', () =>
       colors.every(({ color }) => color !== currentColor)
+    );
+    ValidatorForm.addValidationRule('isPaletteNameUnique', (value) =>
+      palettes.every(
+        ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
+      )
     );
   });
 
@@ -153,8 +158,8 @@ function NewPaletteForm({ savePalette, history, classes }) {
               label="Palette Name"
               name="paletteName"
               onChange={handleChange}
-              validators={['required']}
-              errorMessages={['Enter a palette name']}
+              validators={['required', 'isPaletteNameUnique']}
+              errorMessages={['Enter a palette name', 'Name already used']}
             />
             <Button variant="contained" type="submit" color="primary">
               Save Palette
