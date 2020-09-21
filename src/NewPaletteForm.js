@@ -108,9 +108,9 @@ function NewPaletteForm({ savePalette, history, classes }) {
   };
 
   const addNewColor = () => {
-    const newColor = { color: currentColor, name: newName };
+    const newColor = { color: currentColor, name: newName.colorName };
     setColors([...colors, newColor]);
-    setNewName('');
+    setNewName({ ...newName, colorName: '' });
   };
 
   const handleSubmit = () => {
