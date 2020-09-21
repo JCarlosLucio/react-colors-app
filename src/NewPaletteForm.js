@@ -118,6 +118,7 @@ function NewPaletteForm({ classes }) {
       <CssBaseline />
       <AppBar
         position="fixed"
+        color="default"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
