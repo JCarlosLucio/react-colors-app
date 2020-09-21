@@ -77,7 +77,7 @@ const styles = (theme) => ({
 
 function NewPaletteForm({ savePalette, history, classes }) {
   const [open, setOpen] = useState(false);
-  const [newName, setNewName] = useState('');
+  const [newName, setNewName] = useState({ colorName: '', paletteName: '' });
   const [currentColor, setCurrentColor] = useState('teal');
   const [colors, setColors] = useState([]);
 
