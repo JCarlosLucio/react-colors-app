@@ -100,7 +100,7 @@ function NewPaletteForm({ savePalette, history, classes }) {
   };
 
   const handleChange = (e) => {
-    setNewName(e.target.value);
+    setNewName({ ...newName, [e.target.name]: e.target.value });
   };
 
   const updateCurrentColor = (newColor) => {
