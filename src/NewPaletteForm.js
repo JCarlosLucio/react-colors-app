@@ -114,10 +114,10 @@ function NewPaletteForm({ savePalette, history, classes }) {
   };
 
   const handleSubmit = () => {
-    const newName = 'New Test Palette';
+    const newPaletteName = newName.paletteName;
     const newPalette = {
-      paletteName: newName,
-      id: newName.toLowerCase().replaceAll(' ', '-'),
+      paletteName: newPaletteName,
+      id: newPaletteName.toLowerCase().replaceAll(' ', '-'),
       colors,
     };
     savePalette(newPalette);
