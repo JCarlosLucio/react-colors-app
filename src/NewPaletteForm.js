@@ -136,6 +136,9 @@ function NewPaletteForm({ classes }) {
           <Typography variant="h6" noWrap>
             Persistent drawer
           </Typography>
+          <Button variant="contained" color="primary">
+            Save Palette
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
