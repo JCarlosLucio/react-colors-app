@@ -147,9 +147,19 @@ function NewPaletteForm({ savePalette, history, classes }) {
           <Typography variant="h6" noWrap>
             Persistent drawer
           </Typography>
-          <Button variant="contained" color="primary" onClick={handleSubmit}>
-            Save Palette
-          </Button>
+          <ValidatorForm>
+            <TextValidator
+              value={newName.paletteName}
+              label="Palette Name"
+              name="paletteName"
+              onChange={handleChange}
+              validators={['required']}
+              errorMessages={['Enter a palette name']}
+            />
+            <Button variant="contained" color="primary" onClick={handleSubmit}>
+              Save Palette
+            </Button>
+          </ValidatorForm>
         </Toolbar>
       </AppBar>
       <Drawer
