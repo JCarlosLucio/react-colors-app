@@ -75,7 +75,7 @@ const styles = (theme) => ({
   },
 });
 
-function NewPaletteForm({ classes }) {
+function NewPaletteForm({ savePalette, classes }) {
   const [open, setOpen] = useState(false);
   const [newName, setNewName] = useState('');
   const [currentColor, setCurrentColor] = useState('teal');
@@ -113,6 +113,11 @@ function NewPaletteForm({ classes }) {
     setNewName('');
   };
 
+  const handleSubmit = () => {
+    const newPalette = { paletteName: 'New Test Palette', colors };
+    savePalette(newPalette);
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -136,7 +141,7 @@ function NewPaletteForm({ classes }) {
           <Typography variant="h6" noWrap>
             Persistent drawer
           </Typography>
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" onClick={handleSubmit}>
             Save Palette
           </Button>
         </Toolbar>
