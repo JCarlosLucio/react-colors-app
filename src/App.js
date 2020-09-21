@@ -9,7 +9,7 @@ import { generatePalette } from './helpers/colorHelpers';
 
 function App() {
   const [palettes, setPalettes] = useState(seedColors);
-  const findPalette = (id) => seedColors.find((palette) => palette.id === id);
+  const findPalette = (id) => palettes.find((palette) => palette.id === id);
   const savePalette = (newPalette) => console.log(newPalette);
 
   return (
@@ -18,7 +18,7 @@ function App() {
         exact
         path="/"
         render={(routeProps) => (
-          <PaletteList palettes={seedColors} {...routeProps} />
+          <PaletteList palettes={palettes} {...routeProps} />
         )}
       />
       <Route
