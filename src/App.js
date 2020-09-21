@@ -10,7 +10,7 @@ import { generatePalette } from './helpers/colorHelpers';
 function App() {
   const [palettes, setPalettes] = useState(seedColors);
   const findPalette = (id) => palettes.find((palette) => palette.id === id);
-  const savePalette = (newPalette) => console.log(newPalette);
+  const savePalette = (newPalette) => setPalettes([...palettes, newPalette]);
 
   return (
     <Switch>
