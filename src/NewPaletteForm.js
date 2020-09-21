@@ -75,7 +75,7 @@ const styles = (theme) => ({
   },
 });
 
-function NewPaletteForm({ savePalette, classes }) {
+function NewPaletteForm({ savePalette, history, classes }) {
   const [open, setOpen] = useState(false);
   const [newName, setNewName] = useState('');
   const [currentColor, setCurrentColor] = useState('teal');
@@ -116,6 +116,7 @@ function NewPaletteForm({ savePalette, classes }) {
   const handleSubmit = () => {
     const newPalette = { paletteName: 'New Test Palette', colors };
     savePalette(newPalette);
+    history.push('/');
   };
 
   return (
