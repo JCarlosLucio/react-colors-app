@@ -182,7 +182,8 @@ function NewPaletteForm({ savePalette, history, classes }) {
         />
         <ValidatorForm onSubmit={addNewColor}>
           <TextValidator
-            value={newName}
+            value={newName.colorName}
+            name="colorName"
             onChange={handleChange}
             validators={['required', 'isColorNameUnique', 'isColorUnique']}
             errorMessages={[
