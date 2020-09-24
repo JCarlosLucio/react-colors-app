@@ -129,6 +129,9 @@ function NewPaletteForm({ palettes, savePalette, history, classes }) {
     history.push('/');
   };
 
+  const removeColor = (colorName) =>
+    setColors(colors.filter((color) => color.name !== colorName));
+
   return (
     <div className={classes.root}>
       <CssBaseline />
