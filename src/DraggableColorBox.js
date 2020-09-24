@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const styles = {
   root: {
@@ -16,7 +17,10 @@ const styles = {
 function DraggableColorBox({ color, name, classes }) {
   return (
     <div className={classes.root} style={{ backgroundColor: color }}>
-      {name}
+      <div>
+        <span>{name}</span>
+        <DeleteIcon />
+      </div>
     </div>
   );
 }
