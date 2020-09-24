@@ -228,6 +228,7 @@ function NewPaletteForm({ palettes, savePalette, history, classes }) {
         <div className={classes.drawerHeader} />
         {colors.map((color) => (
           <DraggableColorBox
+            key={color.name}
             color={color.color}
             name={color.name}
             handleClick={() => removeColor(color.name)}
