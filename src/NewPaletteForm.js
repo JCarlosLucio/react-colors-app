@@ -13,7 +13,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import DraggableColorBox from './DraggableColorBox';
+import DraggableColorList from './DraggableColorList';
 
 const drawerWidth = 400;
 
@@ -226,14 +226,7 @@ function NewPaletteForm({ palettes, savePalette, history, classes }) {
         })}
       >
         <div className={classes.drawerHeader} />
-        {colors.map((color) => (
-          <DraggableColorBox
-            key={color.name}
-            color={color.color}
-            name={color.name}
-            handleClick={() => removeColor(color.name)}
-          />
-        ))}
+        <DraggableColorList colors={colors} removeColor={removeColor} />
       </main>
     </div>
   );
