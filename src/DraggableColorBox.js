@@ -35,15 +35,17 @@ const styles = {
   },
 };
 
-function DraggableColorBox({ color, name, handleClick, classes }) {
-  return (
-    <div className={classes.root} style={{ backgroundColor: color }}>
-      <div className={classes.boxContent}>
-        <span>{name}</span>
-        <DeleteIcon className={classes.deleteIcon} onClick={handleClick} />
+const DraggableColorBox = SortableElement(
+  ({ color, name, handleClick, classes }) => {
+    return (
+      <div className={classes.root} style={{ backgroundColor: color }}>
+        <div className={classes.boxContent}>
+          <span>{name}</span>
+          <DeleteIcon className={classes.deleteIcon} onClick={handleClick} />
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+);
 
 export default withStyles(styles)(DraggableColorBox);
