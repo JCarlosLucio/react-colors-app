@@ -121,6 +121,14 @@ function NewPaletteForm({ palettes, savePalette, history, classes }) {
 
   const clearColors = () => setColors([]);
 
+  const addRandomColor = () => {
+    // pick random color from existing palettes
+    const allColors = palettes.flatMap((p) => p.colors);
+    const rand = Math.floor(Math.random() * allColors.length);
+    const randomColor = allColors[rand];
+    setColors([...colors, randomColor]);
+  };
+
   const handleSubmit = () => {
     const newPaletteName = newName.paletteName;
     const newPalette = {
