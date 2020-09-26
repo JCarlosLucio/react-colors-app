@@ -194,7 +194,7 @@ function NewPaletteForm({ palettes, savePalette, history, classes }) {
         <Divider />
         <Typography variant="h4">Design Your Palette</Typography>
         <div>
-          <Button variant="contained" color="secondary">
+          <Button variant="contained" color="secondary" onClick={clearColors}>
             Clear Palette
           </Button>
           <Button variant="contained" color="primary">
