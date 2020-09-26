@@ -88,6 +88,8 @@ function NewPaletteForm({
   const [currentColor, setCurrentColor] = useState('teal');
   const [colors, setColors] = useState(palettes[0].colors);
 
+  const isPaletteFull = colors.length >= maxColors;
+
   // validators - for TextValidator
   useEffect(() => {
     ValidatorForm.addValidationRule('isColorNameUnique', (value) =>
