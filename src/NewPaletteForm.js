@@ -213,7 +213,12 @@ function NewPaletteForm({
           <Button variant="contained" color="secondary" onClick={clearColors}>
             Clear Palette
           </Button>
-          <Button variant="contained" color="primary" onClick={addRandomColor}>
+          <Button
+            variant="contained"
+            color="primary"
+            disabled={isPaletteFull}
+            onClick={addRandomColor}
+          >
             Random Color
           </Button>
         </div>
