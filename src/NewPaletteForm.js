@@ -80,7 +80,7 @@ function NewPaletteForm({ palettes, savePalette, history, classes }) {
   const [open, setOpen] = useState(false);
   const [newName, setNewName] = useState({ colorName: '', paletteName: '' });
   const [currentColor, setCurrentColor] = useState('teal');
-  const [colors, setColors] = useState([]);
+  const [colors, setColors] = useState(palettes[0].colors);
 
   // validators - for TextValidator
   useEffect(() => {
