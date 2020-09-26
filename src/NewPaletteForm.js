@@ -237,9 +237,10 @@ function NewPaletteForm({
             variant="contained"
             type="submit"
             color="primary"
-            style={{ backgroundColor: currentColor }}
+            disabled={isPaletteFull}
+            style={{ backgroundColor: isPaletteFull ? 'grey' : currentColor }}
           >
-            Add Color
+            {isPaletteFull ? 'Palette Full' : 'Add Color'}
           </Button>
         </ValidatorForm>
       </Drawer>
