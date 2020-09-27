@@ -13,9 +13,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 function PaletteFormNav({
   classes,
   open,
-  newName,
   palettes,
-  handleChange,
   handleSubmit,
   handleDrawerOpen,
 }) {
@@ -28,6 +26,10 @@ function PaletteFormNav({
       )
     );
   });
+
+  const handleChange = (e) => {
+    setNewPaletteName(e.target.value);
+  };
 
   return (
     <div>
@@ -54,7 +56,7 @@ function PaletteFormNav({
           </Typography>
           <ValidatorForm onSubmit={handleSubmit}>
             <TextValidator
-              value={newName.paletteName}
+              value={newPaletteName}
               label="Palette Name"
               name="paletteName"
               onChange={handleChange}
