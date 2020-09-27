@@ -115,7 +115,7 @@ function NewPaletteForm({
     setNewName({ ...newName, [e.target.name]: e.target.value });
   };
 
-  const addNewColor = () => {
+  const addNewColor = (currentColor) => {
     const newColor = { color: currentColor, name: newName.colorName };
     setColors([...colors, newColor]);
     setNewName({ ...newName, colorName: '' });
