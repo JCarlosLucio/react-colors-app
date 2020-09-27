@@ -54,7 +54,7 @@ function PaletteFormNav({
           <Typography variant="h6" noWrap>
             Persistent drawer
           </Typography>
-          <ValidatorForm onSubmit={handleSubmit}>
+          <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
             <TextValidator
               value={newPaletteName}
               label="Palette Name"
