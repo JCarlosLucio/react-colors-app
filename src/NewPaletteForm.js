@@ -193,7 +193,7 @@ function NewPaletteForm({
             Random Color
           </Button>
         </div>
-        <ColorPickerForm />
+        <ColorPickerForm isPaletteFull={isPaletteFull} />
       </Drawer>
       <main
         className={clsx(classes.content, {

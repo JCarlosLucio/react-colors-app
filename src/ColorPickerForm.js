@@ -4,7 +4,7 @@ import { ChromePicker } from 'react-color';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-function ColorPickerForm() {
+function ColorPickerForm({ isPaletteFull }) {
   return (
     <div>
       <ChromePicker
