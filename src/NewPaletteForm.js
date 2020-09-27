@@ -80,7 +80,6 @@ function NewPaletteForm({
   classes,
 }) {
   const [open, setOpen] = useState(false);
-  const [newName, setNewName] = useState({ colorName: '', paletteName: '' });
   const [colors, setColors] = useState(palettes[0].colors);
 
   const isPaletteFull = colors.length >= maxColors;
@@ -95,10 +94,6 @@ function NewPaletteForm({
 
   const addNewColor = (newColor) => {
     setColors([...colors, newColor]);
-  };
-
-  const handleChange = (e) => {
-    setNewName({ ...newName, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (newPaletteName) => {
