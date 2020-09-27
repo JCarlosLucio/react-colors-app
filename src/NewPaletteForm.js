@@ -193,6 +193,7 @@ function NewPaletteForm({
           isPaletteFull={isPaletteFull}
           newName={newName}
           handleChange={handleChange}
+          addNewColor={addNewColor}
         />
       </Drawer>
       <main
