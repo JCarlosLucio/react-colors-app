@@ -93,10 +93,8 @@ function NewPaletteForm({
     setOpen(false);
   };
 
-  const addNewColor = (currentColor) => {
-    const newColor = { color: currentColor, name: newName.colorName };
+  const addNewColor = (newColor) => {
     setColors([...colors, newColor]);
-    setNewName({ ...newName, colorName: '' });
   };
 
   const handleChange = (e) => {
