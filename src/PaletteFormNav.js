@@ -15,10 +15,19 @@ function PaletteFormNav({
   classes,
   open,
   newName,
+  palettes,
   handleChange,
   handleSubmit,
   handleDrawerOpen,
 }) {
+  useEffect(() => {
+    ValidatorForm.addValidationRule('isPaletteNameUnique', (value) =>
+      palettes.every(
+        ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
+      )
+    );
+  });
+
   return (
     <div>
       <CssBaseline />

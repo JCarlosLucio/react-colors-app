@@ -163,6 +163,7 @@ function NewPaletteForm({
         open={open}
         classes={classes}
         newName={newName}
+        palettes={palettes}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
         handleDrawerOpen={handleDrawerOpen}
