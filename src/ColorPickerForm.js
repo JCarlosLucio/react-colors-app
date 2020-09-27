@@ -11,6 +11,7 @@ function ColorPickerForm({
   colors,
 }) {
   const [currentColor, setCurrentColor] = useState('teal');
+  const [newColorName, setNewColorName] = useState('');
 
   // validators - for TextValidator
   useEffect(() => {
