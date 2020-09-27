@@ -9,8 +9,19 @@ function ColorPickerForm({
   newName,
   handleChange,
   addNewColor,
+  colors,
 }) {
   const [currentColor, setCurrentColor] = useState('teal');
+
+  // validators - for TextValidator
+  useEffect(() => {
+    ValidatorForm.addValidationRule('isColorNameUnique', (value) =>
+      colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase())
+    );
+    ValidatorForm.addValidationRule('isColorUnique', () =>
+      colors.every(({ color }) => color !== currentColor)
+    );
+  });
 
   const updateCurrentColor = (newColor) => {
     setCurrentColor(newColor.hex);

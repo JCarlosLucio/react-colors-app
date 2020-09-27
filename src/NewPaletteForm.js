@@ -83,25 +83,9 @@ function NewPaletteForm({
 }) {
   const [open, setOpen] = useState(false);
   const [newName, setNewName] = useState({ colorName: '', paletteName: '' });
-
   const [colors, setColors] = useState(palettes[0].colors);
 
   const isPaletteFull = colors.length >= maxColors;
-
-  // validators - for TextValidator
-  useEffect(() => {
-    ValidatorForm.addValidationRule('isColorNameUnique', (value) =>
-      colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase())
-    );
-    ValidatorForm.addValidationRule('isColorUnique', () =>
-      colors.every(({ color }) => color !== currentColor)
-    );
-    ValidatorForm.addValidationRule('isPaletteNameUnique', (value) =>
-      palettes.every(
-        ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
-      )
-    );
-  });
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -191,6 +175,7 @@ function NewPaletteForm({
         </div>
         <ColorPickerForm
           isPaletteFull={isPaletteFull}
+          colors={colors}
           newName={newName}
           handleChange={handleChange}
           addNewColor={addNewColor}
