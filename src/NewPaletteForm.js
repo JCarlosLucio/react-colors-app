@@ -162,6 +162,9 @@ function NewPaletteForm({
       <PaletteFormNav
         open={open}
         classes={classes}
+        newName={newName}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
         handleDrawerOpen={handleDrawerOpen}
       />
       <Drawer

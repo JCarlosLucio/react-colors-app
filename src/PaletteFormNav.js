@@ -11,7 +11,14 @@ import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 
-function PaletteFormNav({ classes, open, handleDrawerOpen }) {
+function PaletteFormNav({
+  classes,
+  open,
+  newName,
+  handleChange,
+  handleSubmit,
+  handleDrawerOpen,
+}) {
   return (
     <div>
       <CssBaseline />
