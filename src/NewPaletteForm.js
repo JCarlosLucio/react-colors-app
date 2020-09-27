@@ -101,8 +101,7 @@ function NewPaletteForm({
     setNewName({ ...newName, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    const newPaletteName = newName.paletteName;
+  const handleSubmit = (newPaletteName) => {
     const newPalette = {
       paletteName: newPaletteName,
       id: newPaletteName.toLowerCase().replaceAll(' ', '-'),
