@@ -174,8 +174,6 @@ function NewPaletteForm({
         <ColorPickerForm
           isPaletteFull={isPaletteFull}
           colors={colors}
-          newName={newName}
-          handleChange={handleChange}
           addNewColor={addNewColor}
         />
       </Drawer>
