@@ -7,6 +7,10 @@ import Button from '@material-ui/core/Button';
 function ColorPickerForm({ isPaletteFull }) {
   const [currentColor, setCurrentColor] = useState('teal');
 
+  const updateCurrentColor = (newColor) => {
+    setCurrentColor(newColor.hex);
+  };
+
   return (
     <div>
       <ChromePicker

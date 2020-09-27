@@ -115,10 +115,6 @@ function NewPaletteForm({
     setNewName({ ...newName, [e.target.name]: e.target.value });
   };
 
-  const updateCurrentColor = (newColor) => {
-    setCurrentColor(newColor.hex);
-  };
-
   const addNewColor = () => {
     const newColor = { color: currentColor, name: newName.colorName };
     setColors([...colors, newColor]);
