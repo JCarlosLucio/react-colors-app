@@ -4,7 +4,7 @@ import { ChromePicker } from 'react-color';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-function ColorPickerForm({ isPaletteFull }) {
+function ColorPickerForm({ isPaletteFull, newName, handleChange }) {
   const [currentColor, setCurrentColor] = useState('teal');
 
   const updateCurrentColor = (newColor) => {
