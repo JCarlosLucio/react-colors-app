@@ -16,13 +16,17 @@ function ColorPickerForm({
     setCurrentColor(newColor.hex);
   };
 
+  const handleSubmit = () => {
+    addNewColor(currentColor);
+  };
+
   return (
     <div>
       <ChromePicker
         color={currentColor}
         onChangeComplete={updateCurrentColor}
       />
-      <ValidatorForm onSubmit={addNewColor}>
+      <ValidatorForm onSubmit={handleSubmit}>
         <TextValidator
           value={newName.colorName}
           name="colorName"
