@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { ChromePicker } from 'react-color';
 import { withStyles } from '@material-ui/core/styles';
+import PaletteFormNav from './PaletteFormNav';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -158,47 +159,7 @@ function NewPaletteForm({
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        color="default"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            Persistent drawer
-          </Typography>
-          <ValidatorForm onSubmit={handleSubmit}>
-            <TextValidator
-              value={newName.paletteName}
-              label="Palette Name"
-              name="paletteName"
-              onChange={handleChange}
-              validators={['required', 'isPaletteNameUnique']}
-              errorMessages={['Enter a palette name', 'Name already used']}
-            />
-            <Button variant="contained" type="submit" color="primary">
-              Save Palette
-            </Button>
-            <Link to="/">
-              <Button variant="contained" color="secondary">
-                GO BACK
-              </Button>
-            </Link>
-          </ValidatorForm>
-        </Toolbar>
-      </AppBar>
+      <PaletteFormNav />
       <Drawer
         className={classes.drawer}
         variant="persistent"
