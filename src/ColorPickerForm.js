@@ -26,7 +26,9 @@ function ColorPickerForm({ isPaletteFull, addNewColor, colors }) {
   };
 
   const handleSubmit = () => {
-    addNewColor(currentColor);
+    const newColor = { color: currentColor, name: newColorName };
+    addNewColor(newColor);
+    setNewColorName('');
   };
 
   return (
