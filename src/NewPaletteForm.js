@@ -159,7 +159,11 @@ function NewPaletteForm({
 
   return (
     <div className={classes.root}>
-      <PaletteFormNav open={open} classes={classes} />
+      <PaletteFormNav
+        open={open}
+        classes={classes}
+        handleDrawerOpen={handleDrawerOpen}
+      />
       <Drawer
         className={classes.drawer}
         variant="persistent"
