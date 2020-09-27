@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
@@ -19,6 +19,8 @@ function PaletteFormNav({
   handleSubmit,
   handleDrawerOpen,
 }) {
+  const [newPaletteName, setNewPaletteName] = useState('');
+
   useEffect(() => {
     ValidatorForm.addValidationRule('isPaletteNameUnique', (value) =>
       palettes.every(
