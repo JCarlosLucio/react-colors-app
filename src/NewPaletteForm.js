@@ -83,7 +83,7 @@ function NewPaletteForm({
 }) {
   const [open, setOpen] = useState(false);
   const [newName, setNewName] = useState({ colorName: '', paletteName: '' });
-  const [currentColor, setCurrentColor] = useState('teal');
+
   const [colors, setColors] = useState(palettes[0].colors);
 
   const isPaletteFull = colors.length >= maxColors;
