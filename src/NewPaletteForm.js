@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { ChromePicker } from 'react-color';
 import { withStyles } from '@material-ui/core/styles';
@@ -190,6 +191,11 @@ function NewPaletteForm({
             <Button variant="contained" type="submit" color="primary">
               Save Palette
             </Button>
+            <Link to="/">
+              <Button variant="contained" color="secondary">
+                GO BACK
+              </Button>
+            </Link>
           </ValidatorForm>
         </Toolbar>
       </AppBar>
