@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import { ChromePicker } from 'react-color';
 import { withStyles } from '@material-ui/core/styles';
 import PaletteFormNav from './PaletteFormNav';
 import ColorPickerForm from './ColorPickerForm';
@@ -95,24 +93,14 @@ function NewPaletteForm({
     setOpen(false);
   };
 
-  const handleChange = (e) => {
-    setNewName({ ...newName, [e.target.name]: e.target.value });
-  };
-
   const addNewColor = (currentColor) => {
     const newColor = { color: currentColor, name: newName.colorName };
     setColors([...colors, newColor]);
     setNewName({ ...newName, colorName: '' });
   };
 
-  const clearColors = () => setColors([]);
-
-  const addRandomColor = () => {
-    // pick random color from existing palettes
-    const allColors = palettes.flatMap((p) => p.colors);
-    const rand = Math.floor(Math.random() * allColors.length);
-    const randomColor = allColors[rand];
-    setColors([...colors, randomColor]);
+  const handleChange = (e) => {
+    setNewName({ ...newName, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = () => {
@@ -124,6 +112,16 @@ function NewPaletteForm({
     };
     savePalette(newPalette);
     history.push('/');
+  };
+
+  const clearColors = () => setColors([]);
+
+  const addRandomColor = () => {
+    // pick random color from existing palettes
+    const allColors = palettes.flatMap((p) => p.colors);
+    const rand = Math.floor(Math.random() * allColors.length);
+    const randomColor = allColors[rand];
+    setColors([...colors, randomColor]);
   };
 
   const removeColor = (colorName) =>
