@@ -159,7 +159,7 @@ function NewPaletteForm({
 
   return (
     <div className={classes.root}>
-      <PaletteFormNav />
+      <PaletteFormNav open={open} classes={classes} />
       <Drawer
         className={classes.drawer}
         variant="persistent"
