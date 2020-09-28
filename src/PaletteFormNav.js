@@ -15,6 +15,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 const drawerWidth = 400;
 
 const styles = (theme) => ({
+  root: {
+    display: 'flex',
+  },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -55,7 +58,7 @@ function PaletteFormNav({
   });
 
   return (
-    <div>
+    <div className={classes.root}>
       <CssBaseline />
       <AppBar
         position="fixed"
