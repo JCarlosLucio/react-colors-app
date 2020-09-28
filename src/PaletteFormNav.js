@@ -41,6 +41,7 @@ const styles = (theme) => ({
   hide: {
     display: 'none',
   },
+  navBtns: {},
 });
 
 function PaletteFormNav({
@@ -84,7 +85,7 @@ function PaletteFormNav({
             Create a Palette
           </Typography>
         </Toolbar>
-        <div>
+        <div className={classes.navBtns}>
           <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
             <TextValidator
               value={newPaletteName}
