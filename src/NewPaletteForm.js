@@ -144,7 +144,9 @@ function NewPaletteForm({
         </div>
         <Divider />
         <div className={classes.container}>
-          <Typography variant="h4">Design Your Palette</Typography>
+          <Typography variant="h4" gutterBottom>
+            Design Your Palette
+          </Typography>
           <div className={classes.buttons}>
             <Button
               className={classes.button}
