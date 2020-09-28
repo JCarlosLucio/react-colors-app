@@ -75,7 +75,7 @@ function PaletteFormNav({
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Persistent drawer
+            Create a Palette
           </Typography>
           <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
             <TextValidator
