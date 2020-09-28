@@ -58,6 +58,7 @@ const styles = (theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  buttons: {},
 });
 
 function NewPaletteForm({
@@ -136,7 +137,7 @@ function NewPaletteForm({
         <Divider />
         <div className={classes.container}>
           <Typography variant="h4">Design Your Palette</Typography>
-          <div>
+          <div className={classes.buttons}>
             <Button variant="contained" color="secondary" onClick={clearColors}>
               Clear Palette
             </Button>
