@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import useInputState from './hooks/useInputState';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,7 +18,7 @@ function PaletteFormNav({
   handleSubmit,
   handleDrawerOpen,
 }) {
-  const [newPaletteName, setNewPaletteName] = useState('');
+  const [newPaletteName, handleChange] = useInputState('');
 
   useEffect(() => {
     ValidatorForm.addValidationRule('isPaletteNameUnique', (value) =>
@@ -26,10 +27,6 @@ function PaletteFormNav({
       )
     );
   });
-
-  const handleChange = (e) => {
-    setNewPaletteName(e.target.value);
-  };
 
   return (
     <div>
