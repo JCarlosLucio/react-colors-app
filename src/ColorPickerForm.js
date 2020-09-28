@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { ChromePicker } from 'react-color';
+import useInputState from './hooks/useInputState';
 import Button from '@material-ui/core/Button';
 
 function ColorPickerForm({ isPaletteFull, addNewColor, colors }) {
   const [currentColor, setCurrentColor] = useState('teal');
-  const [newColorName, setNewColorName] = useState('');
+  const [newColorName, handleChange, reset] = useInputState('');
 
   // validators - for TextValidator
   useEffect(() => {
@@ -21,14 +22,10 @@ function ColorPickerForm({ isPaletteFull, addNewColor, colors }) {
     setCurrentColor(newColor.hex);
   };
 
-  const handleChange = (e) => {
-    setNewColorName(e.target.value);
-  };
-
   const handleSubmit = () => {
     const newColor = { color: currentColor, name: newColorName };
     addNewColor(newColor);
-    setNewColorName('');
+    reset();
   };
 
   return (
