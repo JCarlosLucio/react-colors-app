@@ -50,6 +50,14 @@ const styles = (theme) => ({
     }),
     marginLeft: 0,
   },
+  container: {
+    width: '90%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 function NewPaletteForm({
@@ -126,25 +134,27 @@ function NewPaletteForm({
           </IconButton>
         </div>
         <Divider />
-        <Typography variant="h4">Design Your Palette</Typography>
-        <div>
-          <Button variant="contained" color="secondary" onClick={clearColors}>
-            Clear Palette
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            disabled={isPaletteFull}
-            onClick={addRandomColor}
-          >
-            Random Color
-          </Button>
+        <div className={classes.container}>
+          <Typography variant="h4">Design Your Palette</Typography>
+          <div>
+            <Button variant="contained" color="secondary" onClick={clearColors}>
+              Clear Palette
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              disabled={isPaletteFull}
+              onClick={addRandomColor}
+            >
+              Random Color
+            </Button>
+          </div>
+          <ColorPickerForm
+            isPaletteFull={isPaletteFull}
+            colors={colors}
+            addNewColor={addNewColor}
+          />
         </div>
-        <ColorPickerForm
-          isPaletteFull={isPaletteFull}
-          colors={colors}
-          addNewColor={addNewColor}
-        />
       </Drawer>
       <main
         className={clsx(classes.content, {
