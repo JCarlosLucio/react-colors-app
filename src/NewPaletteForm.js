@@ -61,7 +61,9 @@ const styles = (theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  buttons: {},
+  buttons: {
+    width: '100%',
+  },
 });
 
 function NewPaletteForm({
