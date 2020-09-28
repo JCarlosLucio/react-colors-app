@@ -64,6 +64,9 @@ const styles = (theme) => ({
   buttons: {
     width: '100%',
   },
+  button: {
+    width: '50%',
+  },
 });
 
 function NewPaletteForm({
@@ -143,10 +146,16 @@ function NewPaletteForm({
         <div className={classes.container}>
           <Typography variant="h4">Design Your Palette</Typography>
           <div className={classes.buttons}>
-            <Button variant="contained" color="secondary" onClick={clearColors}>
+            <Button
+              className={classes.button}
+              variant="contained"
+              color="secondary"
+              onClick={clearColors}
+            >
               Clear Palette
             </Button>
             <Button
+              className={classes.button}
               variant="contained"
               color="primary"
               disabled={isPaletteFull}
