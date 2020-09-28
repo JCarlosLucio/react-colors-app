@@ -10,6 +10,12 @@ const styles = {
     width: '100% !important', // important to override default component width
     marginTop: '2rem',
   },
+  addColor: {
+    width: '100%',
+    padding: '1rem',
+    marginTop: '1rem',
+    fontSize: '2rem',
+  },
 };
 
 function ColorPickerForm({ isPaletteFull, addNewColor, colors, classes }) {
@@ -56,6 +62,7 @@ function ColorPickerForm({ isPaletteFull, addNewColor, colors, classes }) {
           ]}
         />
         <Button
+          className={classes.addColor}
           variant="contained"
           type="submit"
           color="primary"
