@@ -10,7 +10,6 @@ const styles = {
     width: '100%',
   },
   picker: {
-    width: '100% !important', // important to override default component width
     marginTop: '2rem',
   },
   addColor: {
@@ -49,6 +48,7 @@ function ColorPickerForm({ isPaletteFull, addNewColor, colors, classes }) {
     <div className={classes.root}>
       <ChromePicker
         className={classes.picker}
+        width="100%"
         color={currentColor}
         onChangeComplete={updateCurrentColor}
       />
