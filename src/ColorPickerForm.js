@@ -6,6 +6,9 @@ import useInputState from './hooks/useInputState';
 import Button from '@material-ui/core/Button';
 
 const styles = {
+  root: {
+    width: '100%',
+  },
   picker: {
     width: '100% !important', // important to override default component width
     marginTop: '2rem',
@@ -43,7 +46,7 @@ function ColorPickerForm({ isPaletteFull, addNewColor, colors, classes }) {
   };
 
   return (
-    <div>
+    <div className={classes.root}>
       <ChromePicker
         className={classes.picker}
         color={currentColor}
