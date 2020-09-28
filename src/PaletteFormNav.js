@@ -83,6 +83,8 @@ function PaletteFormNav({
           <Typography variant="h6" noWrap>
             Create a Palette
           </Typography>
+        </Toolbar>
+        <div>
           <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
             <TextValidator
               value={newPaletteName}
@@ -95,13 +97,13 @@ function PaletteFormNav({
             <Button variant="contained" type="submit" color="primary">
               Save Palette
             </Button>
-            <Link to="/">
-              <Button variant="contained" color="secondary">
-                GO BACK
-              </Button>
-            </Link>
           </ValidatorForm>
-        </Toolbar>
+          <Link to="/">
+            <Button variant="contained" color="secondary">
+              GO BACK
+            </Button>
+          </Link>
+        </div>
       </AppBar>
     </div>
   );
