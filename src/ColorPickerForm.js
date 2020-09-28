@@ -18,6 +18,9 @@ const styles = {
     marginTop: '1rem',
     fontSize: '2rem',
   },
+  colorNameInput: {
+    width: '100%',
+  },
 };
 
 function ColorPickerForm({ isPaletteFull, addNewColor, colors, classes }) {
@@ -54,6 +57,7 @@ function ColorPickerForm({ isPaletteFull, addNewColor, colors, classes }) {
       />
       <ValidatorForm onSubmit={handleSubmit}>
         <TextValidator
+          className={classes.colorNameInput}
           value={newColorName}
           name="colorName"
           onChange={handleChange}
