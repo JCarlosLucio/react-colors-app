@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import useInputState from './hooks/useInputState';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -10,6 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
+
+const styles = {};
 
 function PaletteFormNav({
   classes,
@@ -75,4 +78,4 @@ function PaletteFormNav({
   );
 }
 
-export default PaletteFormNav;
+export default withStyles(styles)(PaletteFormNav);
