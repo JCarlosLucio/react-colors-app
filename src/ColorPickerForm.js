@@ -59,6 +59,9 @@ function ColorPickerForm({ isPaletteFull, addNewColor, colors, classes }) {
       <ValidatorForm onSubmit={handleSubmit}>
         <TextValidator
           className={classes.colorNameInput}
+          margin="normal"
+          variant="filled"
+          placeholder="Color Name"
           value={newColorName}
           name="colorName"
           onChange={handleChange}
