@@ -36,12 +36,12 @@ function PaletteMetaForm({ palettes, handleSubmit }) {
         aria-labelledby="form-dialog-title"
       >
         <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here.
-            We will send updates occasionally.
-          </DialogContentText>
-          <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
+        <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
+          <DialogContent>
+            <DialogContentText>
+              To subscribe to this website, please enter your email address
+              here. We will send updates occasionally.
+            </DialogContentText>
             <TextValidator
               value={newPaletteName}
               label="Palette Name"
@@ -50,19 +50,16 @@ function PaletteMetaForm({ palettes, handleSubmit }) {
               validators={['required', 'isPaletteNameUnique']}
               errorMessages={['Enter a palette name', 'Name already used']}
             />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="primary">
+              Cancel
+            </Button>
             <Button variant="contained" type="submit" color="primary">
               Save Palette
             </Button>
-          </ValidatorForm>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleClose} color="primary">
-            Subscribe
-          </Button>
-        </DialogActions>
+          </DialogActions>
+        </ValidatorForm>
       </Dialog>
     </div>
   );
