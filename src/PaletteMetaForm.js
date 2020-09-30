@@ -27,8 +27,8 @@ function PaletteMetaForm({ palettes, handleSubmit }) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open form dialog
+      <Button variant="contained" color="primary" onClick={handleClickOpen}>
+        Save
       </Button>
       <Dialog
         open={open}
