@@ -24,6 +24,7 @@ const styles = (theme) => ({
     }),
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     height: '64px',
   },
   appBarShift: {
@@ -40,7 +41,16 @@ const styles = (theme) => ({
   hide: {
     display: 'none',
   },
-  navBtns: {},
+  navBtns: {
+    marginRight: '1rem',
+    display: 'flex',
+    '& a': {
+      textDecoration: 'none',
+    },
+    '& button': {
+      margin: '0 0.5rem 0 0',
+    },
+  },
 });
 
 function PaletteFormNav({
@@ -75,12 +85,12 @@ function PaletteFormNav({
           </Typography>
         </Toolbar>
         <div className={classes.navBtns}>
-          <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
           <Link to="/">
             <Button variant="contained" color="secondary">
               GO BACK
             </Button>
           </Link>
+          <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
         </div>
       </AppBar>
     </div>
