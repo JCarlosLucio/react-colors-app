@@ -54,14 +54,6 @@ function PaletteFormNav({
 }) {
   const [newPaletteName, handleChange] = useInputState('');
 
-  useEffect(() => {
-    ValidatorForm.addValidationRule('isPaletteNameUnique', (value) =>
-      palettes.every(
-        ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
-      )
-    );
-  });
-
   return (
     <div className={classes.root}>
       <CssBaseline />
