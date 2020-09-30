@@ -47,6 +47,8 @@ function PaletteMetaForm({ palettes, handleSubmit }) {
               label="Palette Name"
               name="paletteName"
               onChange={handleChange}
+              fullWidth
+              margin="normal"
               validators={['required', 'isPaletteNameUnique']}
               errorMessages={['Enter a palette name', 'Name already used']}
             />
