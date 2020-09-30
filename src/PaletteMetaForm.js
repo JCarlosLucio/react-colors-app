@@ -24,10 +24,18 @@ function PaletteMetaForm({ palettes, hideForm, handleSubmit }) {
 
   const showEmojiPicker = () => setStage('emoji');
 
+  const savePalette = (emoji) => {
+    const newPalette = {
+      paletteName: newPaletteName,
+      emoji: emoji.native,
+    };
+    handleSubmit(newPalette);
+  };
+
   return (
     <div>
       <Dialog open={stage === 'emoji'}>
-        <Picker />
+        <Picker onSelect={savePalette} />
       </Dialog>
       <Dialog
         open={stage === 'form'}
