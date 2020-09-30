@@ -34,7 +34,7 @@ function PaletteMetaForm({ palettes, hideForm, handleSubmit }) {
 
   return (
     <div>
-      <Dialog open={stage === 'emoji'}>
+      <Dialog open={stage === 'emoji'} onClose={hideForm}>
         <Picker onSelect={savePalette} />
       </Dialog>
       <Dialog
