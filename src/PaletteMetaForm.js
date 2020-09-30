@@ -39,8 +39,8 @@ function PaletteMetaForm({ palettes, handleSubmit }) {
         <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
           <DialogContent>
             <DialogContentText>
-              To subscribe to this website, please enter your email address
-              here. We will send updates occasionally.
+              Please enter a name for your new beautiful palette. Make sure it's
+              unique!
             </DialogContentText>
             <TextValidator
               value={newPaletteName}
