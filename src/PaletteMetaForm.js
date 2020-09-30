@@ -31,6 +31,9 @@ function PaletteMetaForm({ palettes, handleSubmit }) {
       <Button variant="contained" color="primary" onClick={handleClickOpen}>
         Save
       </Button>
+      <Dialog>
+        <Picker />
+      </Dialog>
       <Dialog
         open={open}
         onClose={handleClose}
