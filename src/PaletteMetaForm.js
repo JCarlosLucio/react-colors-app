@@ -11,7 +11,6 @@ import { Picker } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
 
 function PaletteMetaForm({ palettes, hideForm, handleSubmit }) {
-  const [open, setOpen] = useState(true);
   const [stage, setStage] = useState('form');
   const [newPaletteName, handleChange] = useInputState('');
 
@@ -22,10 +21,6 @@ function PaletteMetaForm({ palettes, hideForm, handleSubmit }) {
       )
     );
   });
-
-  const handleClickOpen = () => setOpen(true);
-
-  const handleClose = () => setOpen(false);
 
   return (
     <div>
