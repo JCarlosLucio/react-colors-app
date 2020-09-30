@@ -9,7 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-import MenuIcon from '@material-ui/icons/Menu';
+import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import styles from './styles/PaletteFormNavStyles';
 
 function PaletteFormNav({
@@ -42,7 +42,7 @@ function PaletteFormNav({
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
           >
-            <MenuIcon />
+            <AddToPhotosIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
             Create a Palette
