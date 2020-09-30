@@ -11,7 +11,7 @@ import { Picker } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
 
 function PaletteMetaForm({ palettes, handleSubmit }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [newPaletteName, handleChange] = useInputState('');
 
   useEffect(() => {
@@ -28,9 +28,6 @@ function PaletteMetaForm({ palettes, handleSubmit }) {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleClickOpen}>
-        Save
-      </Button>
       <Dialog>
         <Picker />
       </Dialog>

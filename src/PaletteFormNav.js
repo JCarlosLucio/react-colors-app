@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
@@ -60,6 +60,10 @@ function PaletteFormNav({
   handleDrawerOpen,
   classes,
 }) {
+  const [formShowing, setFormShowing] = useState(false);
+
+  const showForm = () => setFormShowing(true);
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -90,9 +94,14 @@ function PaletteFormNav({
               GO BACK
             </Button>
           </Link>
-          <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
+          <Button variant="contained" color="primary" onClick={showForm}>
+            Save
+          </Button>
         </div>
       </AppBar>
+      {formShowing && (
+        <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
+      )}
     </div>
   );
 }
