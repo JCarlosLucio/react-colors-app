@@ -10,7 +10,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { Picker } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
 
-function PaletteMetaForm({ palettes, handleSubmit }) {
+function PaletteMetaForm({ palettes, hideForm, handleSubmit }) {
   const [open, setOpen] = useState(true);
   const [newPaletteName, handleChange] = useInputState('');
 
@@ -33,7 +33,7 @@ function PaletteMetaForm({ palettes, handleSubmit }) {
       </Dialog>
       <Dialog
         open={open}
-        onClose={handleClose}
+        onClose={hideForm}
         aria-labelledby="form-dialog-title"
       >
         <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>
@@ -55,7 +55,7 @@ function PaletteMetaForm({ palettes, handleSubmit }) {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose} color="primary">
+            <Button onClick={hideForm} color="primary">
               Cancel
             </Button>
             <Button variant="contained" type="submit" color="primary">
