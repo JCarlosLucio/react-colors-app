@@ -22,9 +22,11 @@ function PaletteMetaForm({ palettes, hideForm, handleSubmit }) {
     );
   });
 
+  const showEmojiPicker = () => setStage('emoji');
+
   return (
     <div>
-      <Dialog>
+      <Dialog open={stage === 'emoji'}>
         <Picker />
       </Dialog>
       <Dialog
@@ -33,7 +35,7 @@ function PaletteMetaForm({ palettes, hideForm, handleSubmit }) {
         aria-labelledby="form-dialog-title"
       >
         <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>
-        <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
+        <ValidatorForm onSubmit={showEmojiPicker}>
           <DialogContent>
             <DialogContentText>
               Please enter a name for your new beautiful palette. Make sure it's
