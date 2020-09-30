@@ -93,12 +93,9 @@ function NewPaletteForm({
     setColors([...colors, newColor]);
   };
 
-  const handleSubmit = (newPaletteName) => {
-    const newPalette = {
-      paletteName: newPaletteName,
-      id: newPaletteName.toLowerCase().replaceAll(' ', '-'),
-      colors,
-    };
+  const handleSubmit = (newPalette) => {
+    newPalette.id = newPalette.paletteName.toLowerCase().replaceAll(' ', '-');
+    newPalette.colors = colors;
     savePalette(newPalette);
     history.push('/');
   };
