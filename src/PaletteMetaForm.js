@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -30,14 +31,19 @@ function PaletteMetaForm() {
             To subscribe to this website, please enter your email address here.
             We will send updates occasionally.
           </DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-          />
+          <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
+            <TextValidator
+              value={newPaletteName}
+              label="Palette Name"
+              name="paletteName"
+              onChange={handleChange}
+              validators={['required', 'isPaletteNameUnique']}
+              errorMessages={['Enter a palette name', 'Name already used']}
+            />
+            <Button variant="contained" type="submit" color="primary">
+              Save Palette
+            </Button>
+          </ValidatorForm>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">

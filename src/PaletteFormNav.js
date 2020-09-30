@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import useInputState from './hooks/useInputState';
+import PaletteMetaForm from './PaletteMetaForm';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -86,19 +87,7 @@ function PaletteFormNav({
           </Typography>
         </Toolbar>
         <div className={classes.navBtns}>
-          <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
-            <TextValidator
-              value={newPaletteName}
-              label="Palette Name"
-              name="paletteName"
-              onChange={handleChange}
-              validators={['required', 'isPaletteNameUnique']}
-              errorMessages={['Enter a palette name', 'Name already used']}
-            />
-            <Button variant="contained" type="submit" color="primary">
-              Save Palette
-            </Button>
-          </ValidatorForm>
+          <PaletteMetaForm />
           <Link to="/">
             <Button variant="contained" color="secondary">
               GO BACK
