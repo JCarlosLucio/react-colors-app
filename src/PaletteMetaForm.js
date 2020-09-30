@@ -12,6 +12,7 @@ import 'emoji-mart/css/emoji-mart.css';
 
 function PaletteMetaForm({ palettes, hideForm, handleSubmit }) {
   const [open, setOpen] = useState(true);
+  const [stage, setStage] = useState('form');
   const [newPaletteName, handleChange] = useInputState('');
 
   useEffect(() => {
@@ -32,7 +33,7 @@ function PaletteMetaForm({ palettes, hideForm, handleSubmit }) {
         <Picker />
       </Dialog>
       <Dialog
-        open={open}
+        open={stage === 'form'}
         onClose={hideForm}
         aria-labelledby="form-dialog-title"
       >
