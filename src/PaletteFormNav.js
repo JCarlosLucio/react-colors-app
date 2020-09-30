@@ -52,8 +52,6 @@ function PaletteFormNav({
   handleDrawerOpen,
   classes,
 }) {
-  const [newPaletteName, handleChange] = useInputState('');
-
   return (
     <div className={classes.root}>
       <CssBaseline />

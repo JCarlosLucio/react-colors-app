@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import useInputState from './hooks/useInputState';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -10,6 +11,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 function PaletteMetaForm() {
   const [open, setOpen] = useState(false);
+  const [newPaletteName, handleChange] = useInputState('');
 
   useEffect(() => {
     ValidatorForm.addValidationRule('isPaletteNameUnique', (value) =>
