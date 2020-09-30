@@ -4,25 +4,7 @@ import { ChromePicker } from 'react-color';
 import { withStyles } from '@material-ui/core/styles';
 import useInputState from './hooks/useInputState';
 import Button from '@material-ui/core/Button';
-
-const styles = {
-  root: {
-    width: '100%',
-  },
-  picker: {
-    marginTop: '2rem',
-  },
-  addColor: {
-    width: '100%',
-    padding: '1rem',
-    marginTop: '1rem',
-    fontSize: '2rem',
-  },
-  colorNameInput: {
-    width: '100%',
-    heigth: '70px',
-  },
-};
+import styles from './styles/ColorPickerFormStyles';
 
 function ColorPickerForm({ isPaletteFull, addNewColor, colors, classes }) {
   const [currentColor, setCurrentColor] = useState('teal');
