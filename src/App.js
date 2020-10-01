@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import useLocalStorageState from './hooks/useLocalStorageState';
 import PaletteList from './PaletteList';
 import Palette from './Palette';
 import SingleColorPalette from './SingleColorPalette';
@@ -8,7 +9,7 @@ import seedColors from './seedColors';
 import { generatePalette } from './helpers/colorHelpers';
 
 function App() {
-  const [palettes, setPalettes] = useState(seedColors);
+  const [palettes, setPalettes] = useLocalStorageState('palettes', seedColors);
   const findPalette = (id) => palettes.find((palette) => palette.id === id);
   const savePalette = (newPalette) => setPalettes([...palettes, newPalette]);
 
