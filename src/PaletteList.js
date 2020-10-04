@@ -21,6 +21,7 @@ function PaletteList({ classes, palettes, deletePalette, history }) {
               {...palette}
               handleClick={() => goToPalette(palette.id)}
               handleDelete={deletePalette}
+              key={palette.id}
             />
           ))}
         </div>
