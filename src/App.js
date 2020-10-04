@@ -12,6 +12,8 @@ function App() {
   const [palettes, setPalettes] = useLocalStorageState('palettes', seedColors);
   const findPalette = (id) => palettes.find((palette) => palette.id === id);
   const savePalette = (newPalette) => setPalettes([...palettes, newPalette]);
+  const deletePalette = (id) =>
+    setPalettes(palettes.filter((palette) => palette.id !== id));
 
   return (
     <Switch>
