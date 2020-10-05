@@ -73,14 +73,17 @@ export default {
   },
   boxContent: {
     position: 'absolute',
-    padding: '10px',
     width: '100%',
     left: '0',
     bottom: '0',
+    padding: '10px 0',
     color: 'black',
     letterSpacing: '1px',
     textTransform: 'uppercase',
     fontSize: '12px',
+    '& span': {
+      padding: '0 10px',
+    },
   },
   copyOverlay: {
     opacity: '0',
