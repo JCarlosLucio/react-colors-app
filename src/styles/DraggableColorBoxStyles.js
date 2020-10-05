@@ -28,7 +28,6 @@ const styles = {
   },
   boxContent: {
     position: 'absolute',
-    padding: '10px',
     width: '100%',
     left: '0',
     bottom: '0',
@@ -38,6 +37,13 @@ const styles = {
     fontSize: '12px',
     display: 'flex',
     justifyContent: 'space-between',
+    padding: '10px 0',
+    '& span': {
+      padding: '0 10px',
+    },
+    [sizes.down('md')]: {
+      padding: '5px 0',
+    },
   },
   deleteIcon: {
     transition: 'all 0.3s ease-in-out',
