@@ -34,6 +34,9 @@ export default {
     width: '340px',
     marginLeft: '10px',
     marginTop: '3px',
+    [sizes.down('md')]: {
+      width: '150px',
+    },
   },
   selectContainer: {
     marginLeft: 'auto',
