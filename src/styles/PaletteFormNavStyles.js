@@ -1,4 +1,6 @@
 import { DRAWER_WIDTH } from '../constants';
+import sizes from './sizes';
+
 const drawerWidth = DRAWER_WIDTH;
 
 const styles = (theme) => ({
@@ -37,6 +39,14 @@ const styles = (theme) => ({
     },
     '& button': {
       margin: '0 0.5rem 0 0',
+      [sizes.down('xs')]: {
+        fontSize: '0.7rem',
+        margin: 0,
+        padding: '0.5rem',
+      },
+    },
+    [sizes.down('xs')]: {
+      marginRight: 0,
     },
   },
 });
