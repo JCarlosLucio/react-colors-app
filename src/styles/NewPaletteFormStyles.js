@@ -22,6 +22,7 @@ const styles = (theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+    minHeight: '64px', // necessary to mantain 64px at size md/xs
   },
   content: {
     flexGrow: 1,
