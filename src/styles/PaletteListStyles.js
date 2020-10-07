@@ -14,6 +14,12 @@ export default {
     flexDirection: 'column',
     alignItems: 'flex-start',
     flexWrap: 'wrap',
+    [sizes.down('xl')]: {
+      width: '80%',
+    },
+    [sizes.down('xs')]: {
+      width: '75%',
+    },
   },
   nav: {
     width: '100%',
