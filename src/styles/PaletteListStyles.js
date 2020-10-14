@@ -13,6 +13,9 @@ export default {
     // makes background stay in place when scrolling
     overflow: 'scroll',
   },
+  heading: {
+    fontSize: '2rem',
+  },
   container: {
     width: '50%',
     display: 'flex',
