@@ -8,7 +8,7 @@ export default {
     alignItems: 'flex-start',
     justifyContent: 'center',
     /* background by SVGBackgrounds.com */
-    backgroundColor: '#330033',
+    backgroundColor: '#0F001A',
     backgroundImage: `url(${bg})`,
     // makes background stay in place when scrolling
     overflow: 'scroll',
