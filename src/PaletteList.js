@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MiniPalette from './MiniPalette';
 import Dialog from '@material-ui/core/Dialog';
@@ -19,6 +19,10 @@ import styles from './styles/PaletteListStyles';
 function PaletteList({ classes, palettes, deletePalette, history }) {
   // history comes from routeProps
   const goToPalette = (id) => history.push(`/palette/${id}`);
+  const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+
+  const openDialog = () => setOpenDeleteDialog(true);
+  const closeDialog = () => setOpenDeleteDialog(false);
 
   return (
     <div className={classes.root}>
