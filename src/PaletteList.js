@@ -20,9 +20,16 @@ function PaletteList({ classes, palettes, deletePalette, history }) {
   // history comes from routeProps
   const goToPalette = (id) => history.push(`/palette/${id}`);
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+  const [deletingId, setDeletingId] = useState('');
 
-  const openDialog = () => setOpenDeleteDialog(true);
-  const closeDialog = () => setOpenDeleteDialog(false);
+  const openDialog = (id) => {
+    setOpenDeleteDialog(true);
+    setDeletingId(id);
+  };
+  const closeDialog = () => {
+    setOpenDeleteDialog(false);
+    setDeletingId('');
+  };
 
   return (
     <div className={classes.root}>
