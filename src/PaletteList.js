@@ -44,7 +44,11 @@ function PaletteList({ classes, palettes, deletePalette, history }) {
           ))}
         </TransitionGroup>
       </div>
-      <Dialog open={true} aria-labelledby="delete-dialog-title">
+      <Dialog
+        open={openDeleteDialog}
+        aria-labelledby="delete-dialog-title"
+        onClose={closeDialog}
+      >
         <DialogTitle id="delete-dialog-title">Delete This Palette?</DialogTitle>
         <List>
           <ListItem button>
@@ -55,7 +59,7 @@ function PaletteList({ classes, palettes, deletePalette, history }) {
             </ListItemAvatar>
             <ListItemText>Delete</ListItemText>
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={closeDialog}>
             <ListItemAvatar>
               <Avatar style={{ backgroundColor: red[100], color: red[600] }}>
                 <CloseIcon />
