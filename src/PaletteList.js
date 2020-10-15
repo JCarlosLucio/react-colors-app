@@ -30,6 +30,10 @@ function PaletteList({ classes, palettes, deletePalette, history }) {
     setOpenDeleteDialog(false);
     setDeletingId('');
   };
+  const handleDelete = () => {
+    deletePalette(deletingId);
+    closeDialog();
+  };
 
   return (
     <div className={classes.root}>
@@ -59,7 +63,7 @@ function PaletteList({ classes, palettes, deletePalette, history }) {
       >
         <DialogTitle id="delete-dialog-title">Delete This Palette?</DialogTitle>
         <List>
-          <ListItem button>
+          <ListItem button onClick={handleDelete}>
             <ListItemAvatar>
               <Avatar style={{ backgroundColor: blue[100], color: blue[600] }}>
                 <CheckIcon />
