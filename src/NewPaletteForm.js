@@ -121,6 +121,7 @@ function NewPaletteForm({
       >
         <div className={classes.drawerHeader} />
         <DraggableColorList
+          distance={5}
           colors={colors}
           removeColor={removeColor}
           axis="xy"
