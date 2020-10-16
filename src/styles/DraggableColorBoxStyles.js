@@ -37,12 +37,12 @@ const styles = {
     fontSize: '12px',
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '10px 0',
+    padding: '10px',
     '& span': {
       padding: '0 10px',
     },
-    [sizes.down('md')]: {
-      padding: '5px 0',
+    [sizes.down('xs')]: {
+      padding: '5px',
     },
   },
   deleteIcon: {
