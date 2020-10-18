@@ -20,7 +20,7 @@ function App() {
     <Route
       render={() => (
         <TransitionGroup>
-          <CSSTransition>
+          <CSSTransition classNames="fade" timeout={5000}>
             <Switch>
               <Route
                 exact
