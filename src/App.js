@@ -9,7 +9,6 @@ import Page from './Page';
 import seedColors from './seedColors';
 import { generatePalette } from './helpers/colorHelpers';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import './App.css';
 
 function App() {
   const [palettes, setPalettes] = useLocalStorageState('palettes', seedColors);
