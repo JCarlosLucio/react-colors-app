@@ -30,6 +30,7 @@ function PaletteMetaForm({ palettes, hideForm, handleSubmit }) {
       emoji: emoji.native,
     };
     handleSubmit(newPalette);
+    hideForm();
   };
 
   return (
