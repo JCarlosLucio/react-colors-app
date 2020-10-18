@@ -17,51 +17,61 @@ function App() {
     setPalettes(palettes.filter((palette) => palette.id !== id));
 
   return (
-    <Switch>
-      <Route
-        exact
-        path="/"
-        render={(routeProps) => (
-          <PaletteList
-            palettes={palettes}
-            deletePalette={deletePalette}
-            {...routeProps}
-          />
-        )}
-      />
-      <Route
-        exact
-        path="/palette/new"
-        render={(routeProps) => (
-          <NewPaletteForm
-            savePalette={savePalette}
-            palettes={palettes}
-            {...routeProps}
-          />
-        )}
-      />
-      <Route
-        exact
-        path="/palette/:id"
-        render={(routeProps) => (
-          <Palette
-            palette={generatePalette(findPalette(routeProps.match.params.id))}
-          />
-        )}
-      />
-      <Route
-        exact
-        path="/palette/:paletteId/:colorId"
-        render={(routeProps) => (
-          <SingleColorPalette
-            colorId={routeProps.match.params.colorId}
-            palette={generatePalette(
-              findPalette(routeProps.match.params.paletteId)
-            )}
-          />
-        )}
-      />
-    </Switch>
+    <Route
+      render={() => (
+        <TransitionGroup>
+          <CSSTransition>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={(routeProps) => (
+                  <PaletteList
+                    palettes={palettes}
+                    deletePalette={deletePalette}
+                    {...routeProps}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/palette/new"
+                render={(routeProps) => (
+                  <NewPaletteForm
+                    savePalette={savePalette}
+                    palettes={palettes}
+                    {...routeProps}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/palette/:id"
+                render={(routeProps) => (
+                  <Palette
+                    palette={generatePalette(
+                      findPalette(routeProps.match.params.id)
+                    )}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/palette/:paletteId/:colorId"
+                render={(routeProps) => (
+                  <SingleColorPalette
+                    colorId={routeProps.match.params.colorId}
+                    palette={generatePalette(
+                      findPalette(routeProps.match.params.paletteId)
+                    )}
+                  />
+                )}
+              />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+      )}
+    />
   );
 }
 
