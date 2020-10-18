@@ -7,6 +7,7 @@ import SingleColorPalette from './SingleColorPalette';
 import NewPaletteForm from './NewPaletteForm';
 import seedColors from './seedColors';
 import { generatePalette } from './helpers/colorHelpers';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 function App() {
   const [palettes, setPalettes] = useLocalStorageState('palettes', seedColors);
