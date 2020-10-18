@@ -8,6 +8,7 @@ import NewPaletteForm from './NewPaletteForm';
 import seedColors from './seedColors';
 import { generatePalette } from './helpers/colorHelpers';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import './App.css';
 
 function App() {
   const [palettes, setPalettes] = useLocalStorageState('palettes', seedColors);
@@ -20,7 +21,7 @@ function App() {
     <Route
       render={({ location }) => (
         <TransitionGroup>
-          <CSSTransition key={location.key} classNames="fade" timeout={5000}>
+          <CSSTransition key={location.key} classNames="fade" timeout={500}>
             <Switch location={location}>
               <Route
                 exact
