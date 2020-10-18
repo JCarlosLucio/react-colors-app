@@ -26,45 +26,53 @@ function App() {
                 exact
                 path="/"
                 render={(routeProps) => (
-                  <PaletteList
-                    palettes={palettes}
-                    deletePalette={deletePalette}
-                    {...routeProps}
-                  />
+                  <div className="page">
+                    <PaletteList
+                      palettes={palettes}
+                      deletePalette={deletePalette}
+                      {...routeProps}
+                    />
+                  </div>
                 )}
               />
               <Route
                 exact
                 path="/palette/new"
                 render={(routeProps) => (
-                  <NewPaletteForm
-                    savePalette={savePalette}
-                    palettes={palettes}
-                    {...routeProps}
-                  />
+                  <div className="page">
+                    <NewPaletteForm
+                      savePalette={savePalette}
+                      palettes={palettes}
+                      {...routeProps}
+                    />
+                  </div>
                 )}
               />
               <Route
                 exact
                 path="/palette/:id"
                 render={(routeProps) => (
-                  <Palette
-                    palette={generatePalette(
-                      findPalette(routeProps.match.params.id)
-                    )}
-                  />
+                  <div className="page">
+                    <Palette
+                      palette={generatePalette(
+                        findPalette(routeProps.match.params.id)
+                      )}
+                    />
+                  </div>
                 )}
               />
               <Route
                 exact
                 path="/palette/:paletteId/:colorId"
                 render={(routeProps) => (
-                  <SingleColorPalette
-                    colorId={routeProps.match.params.colorId}
-                    palette={generatePalette(
-                      findPalette(routeProps.match.params.paletteId)
-                    )}
-                  />
+                  <div className="page">
+                    <SingleColorPalette
+                      colorId={routeProps.match.params.colorId}
+                      palette={generatePalette(
+                        findPalette(routeProps.match.params.paletteId)
+                      )}
+                    />
+                  </div>
                 )}
               />
             </Switch>
