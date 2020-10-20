@@ -33,12 +33,7 @@ const MiniPalette = memo(
       </div>
     );
   },
-  (prevProps, nextProps) => {
-    if (prevProps.openDialog !== nextProps.openDialog) {
-      return true;
-    }
-    return false;
-  }
+  (prevProps, nextProps) => prevProps.openDialog !== nextProps.openDialog
 );
 
 export default withStyles(styles)(MiniPalette);
