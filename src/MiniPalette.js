@@ -21,7 +21,7 @@ const MiniPalette = memo(
         style={{ backgroundColor: color.color }}
       />
     ));
-    console.log('RENDERING', paletteName);
+
     return (
       <div className={classes.root} onClick={handleClick}>
         <DeleteIcon className={classes.deleteIcon} onClick={deletePalette} />
