@@ -47,7 +47,7 @@ function PaletteList({ classes, palettes, deletePalette, history }) {
             <CSSTransition key={palette.id} classNames="fade" timeout={500}>
               <MiniPalette
                 {...palette}
-                handleClick={() => goToPalette(palette.id)}
+                handleClick={goToPalette}
                 // handleDelete={deletePalette}
                 openDialog={openDialog}
                 key={palette.id}
