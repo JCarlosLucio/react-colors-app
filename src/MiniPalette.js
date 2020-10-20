@@ -28,6 +28,12 @@ const MiniPalette = memo(
         </h5>
       </div>
     );
+  },
+  (prevProps, nextProps) => {
+    if (prevProps.openDialog !== nextProps.openDialog) {
+      return true;
+    }
+    return false;
   }
 );
 
