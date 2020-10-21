@@ -48,7 +48,6 @@ function PaletteList({ classes, palettes, deletePalette, history }) {
               <MiniPalette
                 {...palette}
                 goToPalette={goToPalette}
-                // handleDelete={deletePalette}
                 openDialog={openDialog}
                 key={palette.id}
               />
