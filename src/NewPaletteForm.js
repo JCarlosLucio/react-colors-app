@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
-import PaletteFormNav from './PaletteFormNav';
-import ColorPickerForm from './ColorPickerForm';
-import Drawer from '@material-ui/core/Drawer';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import DraggableColorList from './DraggableColorList';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
+import Button from '@material-ui/core/Button';
 import arrayMove from 'array-move';
+import clsx from 'clsx';
+import DraggableColorList from './DraggableColorList';
+import ColorPickerForm from './ColorPickerForm';
+import PaletteFormNav from './PaletteFormNav';
 import styles from './styles/NewPaletteFormStyles';
 
 function NewPaletteForm({
