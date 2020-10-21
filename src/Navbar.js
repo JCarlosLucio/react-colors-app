@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import Select from '@material-ui/core/Select';
+import IconButton from '@material-ui/core/IconButton';
 import MenuItem from '@material-ui/core/MenuItem';
 import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import Select from '@material-ui/core/Select';
 import LevelSlider from './LevelSlider';
-import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/NavbarStyles';
 
 function Navbar({
