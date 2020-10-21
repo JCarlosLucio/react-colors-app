@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
-import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
-import PaletteMetaForm from './PaletteMetaForm';
+import { Link } from 'react-router-dom';
+import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
+import AppBar from '@material-ui/core/AppBar';
+import clsx from 'clsx';
+import PaletteMetaForm from './PaletteMetaForm';
 import styles from './styles/PaletteFormNavStyles';
 
 function PaletteFormNav({
