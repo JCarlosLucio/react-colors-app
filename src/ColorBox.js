@@ -1,9 +1,9 @@
 import React from 'react';
-import useTimedToggle from './hooks/useTimedToggle';
-import clsx from 'clsx';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import clsx from 'clsx';
+import useTimedToggle from './hooks/useTimedToggle';
 import styles from './styles/ColorBoxStyles';
 
 function ColorBox({ background, name, moreUrl, showingFullPalette, classes }) {
