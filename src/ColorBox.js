@@ -1,5 +1,6 @@
 import React from 'react';
 import useTimedToggle from './hooks/useTimedToggle';
+import clsx from 'clsx';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
@@ -13,12 +14,14 @@ function ColorBox({ background, name, moreUrl, showingFullPalette, classes }) {
       <div style={{ background }} className={classes.ColorBox}>
         <div
           style={{ background }}
-          className={`${classes.copyOverlay} ${isCopied &&
-            classes.showOverlay}`}
+          className={clsx(classes.copyOverlay, {
+            [classes.showOverlay]: isCopied,
+          })}
         />
         <div
-          className={`${classes.copyMessage} ${isCopied &&
-            classes.showMessage}`}
+          className={clsx(classes.copyMessage, {
+            [classes.showMessage]: isCopied,
+          })}
         >
           <h1>COPIED!</h1>
           <p className={classes.copyText}>{background}</p>
