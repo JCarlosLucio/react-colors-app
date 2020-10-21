@@ -35,7 +35,7 @@ function Navbar({
   return (
     <nav className={classes.Navbar}>
       <div className={classes.logo}>
-        <Link to="/">reactcolorapp</Link>
+        <Link to="/">reactcolors</Link>
       </div>
       {showingAllColors && (
         <div className={classes.sliderContainer}>
