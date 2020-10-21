@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
-import ColorBox from './ColorBox';
-import PaletteFooter from './PaletteFooter';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+import PaletteFooter from './PaletteFooter';
+import ColorBox from './ColorBox';
+import Navbar from './Navbar';
 import styles from './styles/PaletteStyles';
 
 const gatherShades = (palette, colorId) => {
