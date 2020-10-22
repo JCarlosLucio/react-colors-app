@@ -11,6 +11,7 @@ import clsx from 'clsx';
 import DraggableColorList from './DraggableColorList';
 import ColorPickerForm from './ColorPickerForm';
 import PaletteFormNav from './PaletteFormNav';
+import seedColors from './seedColors';
 import styles from './styles/NewPaletteFormStyles';
 
 function NewPaletteForm({
@@ -21,7 +22,7 @@ function NewPaletteForm({
   classes,
 }) {
   const [open, setOpen] = useState(false);
-  const [colors, setColors] = useState(palettes[0].colors);
+  const [colors, setColors] = useState(seedColors[0].colors);
 
   const isPaletteFull = colors.length >= maxColors;
 
