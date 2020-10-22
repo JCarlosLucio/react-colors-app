@@ -76,6 +76,18 @@ function App() {
                   </Page>
                 )}
               />
+              {/* Acts as a 404 page when invalid urls are written */}
+              <Route
+                render={(routeProps) => (
+                  <Page>
+                    <PaletteList
+                      palettes={palettes}
+                      deletePalette={deletePalette}
+                      {...routeProps}
+                    />
+                  </Page>
+                )}
+              />
             </Switch>
           </CSSTransition>
         </TransitionGroup>
