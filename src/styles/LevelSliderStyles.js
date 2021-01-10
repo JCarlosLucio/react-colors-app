@@ -1,4 +1,4 @@
-export default {
+const styles = {
   root: {
     color: '#d4d5d9',
     height: 8,
@@ -24,3 +24,5 @@ export default {
     borderRadius: 4,
   },
 };
+
+export default styles;

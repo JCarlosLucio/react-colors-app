@@ -1,6 +1,6 @@
 import sizes from './sizes';
 
-export default {
+const styles = {
   Palette: {
     display: 'flex',
     flexDirection: 'column',
@@ -51,3 +51,5 @@ export default {
     },
   },
 };
+
+export default styles;

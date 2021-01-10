@@ -1,6 +1,6 @@
 // Sizes taken from https://getbootstrap.com/docs/4.5/layout/overview/
 
-export default {
+const sizes = {
   // usually used when mobile first
   up(size) {
     const sizes = {
@@ -23,3 +23,5 @@ export default {
     return `@media (max-width: ${sizes[size]})`;
   },
 };
+
+export default sizes;
